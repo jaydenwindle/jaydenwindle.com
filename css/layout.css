@@ -187,7 +187,7 @@ ul#nav li.current a { padding-bottom: 5px; border-bottom: 3px solid #fff; }
 /* ------------------------------------------------------------------ */
 
 #about {
-   background: #867257;
+   background: #ebeeee;
    padding-top: 96px;
    padding-bottom: 66px;
    overflow: hidden;
@@ -201,12 +201,12 @@ ul#nav li.current a { padding-bottom: 5px; border-bottom: 3px solid #fff; }
 
 #about h2 {
    font: 22px/30px 'opensans-bold', sans-serif;
-   color: #fff;
+   color: #313131;
    margin-bottom: 12px;
 }
 #about p {
    line-height: 30px;
-   color: #fff;
+   color: #313131;
 }
 #about .profile-pic {
    position: relative;
