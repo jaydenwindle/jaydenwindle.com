@@ -1,0 +1,44 @@
+.btn {
+    padding: 15px 45px;
+    transition: all 0.3s ease;
+}
+.btn-rounded {
+    border-radius: 999px;
+}
+.btn-default {
+    border-color: #fff;
+    color: $brand-primary;
+    border-width: 2px;
+    &:hover {
+        border-color: #eee;
+        background: #eee;
+    }
+}
+.btn-primary {
+    border: 0;
+    //background: linear-gradient(to left, rgba(38, 208, 206, 0.9), rgba(26, 41, 128, 0.9));
+    transition: all 0.3s ease;
+        @include shadow(1);
+    &:hover {
+        @include shadow(2);
+        background: lighten($brand-primary, 3%);
+    }
+}
+.btn-outline-gradient {
+    background-image: linear-gradient(white, white), linear-gradient(to left, rgba(38, 208, 206, 0.9), rgba(26, 41, 128, 0.9));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+.btn-outline {
+    border: 2px solid $brand-primary;
+    color: $brand-primary;
+    background-color: #fff;
+    &:hover {
+        @include shadow(1);
+        color: #fff;
+        background-color: $brand-primary;
+    }
+}
+.label-default {
+    background-color: #ccc;
+}

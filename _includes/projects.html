@@ -1,0 +1,19 @@
+<div class="container projects" id="projects">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="text-center">Projects</h2>
+        </div>
+    </div>
+    <div class="row">
+        {% for project in site.projects limit:include.limit %}
+        <gh-card 
+            repo="{{ project.repo }}" 
+            name="{{ project.name }}" 
+            image="{{ project.image }}"
+            url="{{ project.url }}"></gh-card>
+        {% endfor %}
+    </div>
+    <div class="row text-center all-projects">
+        <div class="btn btn-outline">All Projects <i class="fa fa-arrow-right"></i></div>
+    </div>
+</div>

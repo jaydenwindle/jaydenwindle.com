@@ -1,0 +1,79 @@
+/* Extra small devices (phones, less than 768px) */
+
+.menu-toggle {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 50px;
+    background-color: $brand-primary;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    cursor: pointer;
+    display: none;
+}
+
+.jumbotron {
+    background: #1A2980;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top left, rgba(38, 208, 206, 0.7), rgba(26, 41, 128, 0.7)), url("images/bg1.jpg");
+    background: linear-gradient(to top left, rgba(38, 208, 206, 0.9), rgba(26, 41, 128, 0.9)), url("images/bg1.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    color: white;
+    padding: 25px 0;
+    h1, h2 {
+        font-family: $font-family-sans-serif;
+        @include text-shadow();
+    }
+    h1 {
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    h2 {
+        margin-bottom: 25px;
+        height: 82px;
+    }
+    .btn {
+        width: 100%;
+    }
+    .social-links {
+        margin-bottom: 25px;
+        text-align: center;
+        a {
+            font-size: 40px;
+            color: #fff;
+            margin-right: 15px;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+    .jumbotron {
+        padding: 50px 0;
+        h2 {
+            height: auto;
+        }
+        .social-links {
+            text-align: left;
+        }
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+    .jumbotron {
+        padding: 70px 0;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
+}

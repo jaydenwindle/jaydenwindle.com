@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "A new website"
 author:  "Jayden Windle"
 date:   2017-04-21 15:43:22 -0400
 ---

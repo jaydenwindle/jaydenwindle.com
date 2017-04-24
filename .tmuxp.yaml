@@ -1,0 +1,11 @@
+session_name: portfolio
+windows:
+    - window_name: dev window
+      layout: main-vertical
+      options:
+        main-pane-width: 140
+      panes:
+        - vim
+        - clear
+        - jekyll s
+
