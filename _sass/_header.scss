@@ -1,21 +1,4 @@
 /* Extra small devices (phones, less than 768px) */
-
-.menu-toggle {
-    width: 60px;
-    height: 60px;
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    border-radius: 50px;
-    background-color: $brand-primary;
-    color: #fff;
-    text-align: center;
-    line-height: 60px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    cursor: pointer;
-    display: none;
-}
-
 .jumbotron {
     background: #1A2980;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top left, rgba(38, 208, 206, 0.7), rgba(26, 41, 128, 0.7)), url("images/bg1.jpg");
@@ -24,7 +7,7 @@
     background-position: center bottom;
     color: white;
     padding: 25px 0;
-    h1, h2 {
+    h1, h2, h4 {
         font-family: $font-family-sans-serif;
         @include text-shadow();
     }

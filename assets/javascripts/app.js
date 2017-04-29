@@ -10,6 +10,11 @@ $(function() {
         loop: true
     });
 
+    var projects_app = new Vue({
+        el: "#projects",
+        data: {},
+    })
+
 });
 
 {% raw %}
@@ -39,7 +44,7 @@ Vue.component('gh-card', {
                             <span class="git-commits">{{ commits_count }}</span>
                         </div>
                     </div>
-                    <a href="{{ url }}" class="btn btn-primary btn-block btn-rounded" role="button">
+                    <a :href="url" class="btn btn-primary btn-block btn-rounded" role="button">
                         Details
                     </a> 
                 </div>
@@ -66,15 +71,24 @@ Vue.component('gh-card', {
                 this.stargazers_count = ghData.stargazers_count
                 this.watchers_count = ghData.watchers_count
                 this.commits_count = ghData.commits_count
-            })
+            });
+    },
+    updated() {
+        equalizeGHCardHeights()
     }
 })
 {% endraw %}
 
-var projects_app = new Vue({
-    el: "#projects",
-    data: {} 
-})
+function equalizeGHCardHeights() {
+    var maxHeight = 0
+    $(".project-card").each(function () {
+        var h = $(this).find(".description").height()
+        if (h > maxHeight) {
+            maxHeight = h 
+            $('.project-card').find(".description").height(maxHeight);
+        }
+    });
+}
 
 function getRepoInfo(repo) {
     var ghAPI = "https://api.github.com/"
@@ -86,7 +100,7 @@ function getRepoInfo(repo) {
         dataType: "json",
         beforeSend(xhr) {
             if (cachedData = getCachedGitData(repo)) {
-                xhr.setRequestHeader("If-None-Match", cachedData.etag)
+                xhr.setRequestHeader("If-Modified-Since", new Date(cachedData.date).toUTCString())
             }
         }
     })
@@ -97,8 +111,7 @@ function getRepoInfo(repo) {
         dataType: "json",
         beforeSend(xhr) {
             if (cachedData = getCachedGitData(repo)) {
-                console.log(cachedData.etag);
-                xhr.setRequestHeader("If-None-Match", cachedData.etag)
+                xhr.setRequestHeader("If-Modified-Since", new Date(cachedData.date).toUTCString())
             }
         }
     })
@@ -109,9 +122,9 @@ function getRepoInfo(repo) {
 
                 // cache data if new
                 if (code !== "notmodified") {
-                    console.log("loading fresh data");
+                    console.log("loading fresh");
                     cacheGitData(repo, {
-                        etag: xhr.getResponseHeader("ETag"), 
+                        date: new Date(), 
                         description: data.description,
                         stargazers_count: data.stargazers_count,
                         watchers_count: data.watchers_count,
@@ -125,10 +138,8 @@ function getRepoInfo(repo) {
             .done((data, code, xhr) => {
                 var numCommits = 0;
 
-                console.log(code !== "notmodified");
-
                 if (code !== "notmodified") {
-                    console.log("loading fresh data");
+                    console.log("loading fresh");
                     for (var i = 0; i < data.length; i++) {
                         numCommits += data[i].contributions
                     }

@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "A new website"
+subtitle:  "May1Reboot season 2"
+header-image:  "/assets/images/blurred-city.jpg"
 author:  "Jayden Windle"
 date:   2017-04-21 15:43:22 -0400
 ---

@@ -46,7 +46,7 @@
 
 .quotes {
     margin: 25px 0;
-    padding: 70px 0;
+    padding: 100px 0;
     background: #1A2980;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top right, rgba(38, 208, 206, 0.7), rgba(26, 41, 128, 0.7)), url("images/quotes-bg.jpg");
     background: linear-gradient(to top right, rgba(38, 208, 206, 0.9), rgba(26, 41, 128, 0.9)), url("images/quotes-bg.jpg");
@@ -69,6 +69,13 @@
 
 .blog-posts {
     color: $text-color;
+    .blog-image {
+        padding: 0 4px 0 4px;
+        margin-top: -11px;
+        img {
+            border-radius: 2px;
+        }
+    }
     h2 {
         margin-bottom: 50px;
         font-weight: 700;
@@ -78,6 +85,7 @@
         margin-bottom: 5px;
     }
     h5 {
+        margin-top: 5px;
         margin-top: 5px;
     }
     .blog-entry-link {
@@ -106,7 +114,12 @@
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) {
-
+    .blog-posts {
+        .blog-image {
+            padding-right: $grid-gutter-width / 2;
+            margin-bottom: -11px;
+        }
+    }
 }
 
 /* Large devices (large desktops, 1200px and up) */

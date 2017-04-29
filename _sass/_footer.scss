@@ -1,0 +1,36 @@
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+footer {
+    text-align: center;
+    .social-links {
+        margin-bottom: 25px;
+        text-align: center;
+        a {
+            margin-left: 10px;
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+    footer {
+        text-align: left;
+        .social-links {
+            text-align: right;
+        }
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
+}
+

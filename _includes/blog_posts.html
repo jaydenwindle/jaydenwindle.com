@@ -11,13 +11,13 @@
                 <div class="panel-body">
                     <div class="row">
                         <a href="{{ post.url }}" class="blog-entry-link">
-                            <div class="col-md-4">
-                                <img class="img-responsive" src="assets/images/blurred-city.jpg" alt="">
+                            <div class="col-md-4 blog-image">
+                                <img class="img-responsive" src="{{post.header-image}}" alt="">
                             </div>
                             <div class="col-md-8">
                                 <h4>{{ post.title }}</h4>
                                 <h5 class="small text-muted"><em>Posted on {{ post.date | date_to_string }} by {{ post.author }}</em></h5>
-                                <p>Blog excerpt to pique your interest and make you want to read more of the words I write.</p>
+                                <p>{{ post.excerpt | truncatewords: 25 }}</p>
                                 <!--<p class="small text-muted">Categories: -->
                                     <!--{% for category in post.categories %}-->
                                     <!--<span class="label label-default">{{ category }}</span>-->
@@ -32,7 +32,9 @@
         </div>
     </div>
     {% endfor %}
-    <div class="row text-center all-blog-posts">
-        <a href="{{ "blog" | relative_url }}" class="btn btn-outline">More Posts <i class="fa fa-arrow-right"></i></a>
-    </div>
+    {% if include.limit != nil %}
+        <div class="row text-center all-blog-posts">
+            <a href="{{ "blog" | relative_url }}" class="btn btn-outline">More Posts <i class="fa fa-arrow-right"></i></a>
+        </div>
+    {% endif %}
 </div>

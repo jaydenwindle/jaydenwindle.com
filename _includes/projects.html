@@ -1,9 +1,11 @@
 <div class="container projects" id="projects">
+    {% if include.limit != nil %}
     <div class="row">
         <div class="col-xs-12">
             <h2 class="text-center">Projects</h2>
         </div>
     </div>
+    {% endif %}
     <div class="row">
         {% for project in site.projects limit:include.limit %}
         <gh-card 
@@ -13,7 +15,9 @@
             url="{{ project.url }}"></gh-card>
         {% endfor %}
     </div>
+    {% if include.limit != nil %}
     <div class="row text-center all-projects">
-        <div class="btn btn-outline">All Projects <i class="fa fa-arrow-right"></i></div>
+        <a href="{{site.url}}/projects" class="btn btn-outline">All Projects <i class="fa fa-arrow-right"></i></a>
     </div>
+    {% endif %}
 </div>

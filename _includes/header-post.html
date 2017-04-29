@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{{page.tile}}</title>
+    <link rel="stylesheet" href="{{ 'assets/style.css' | relative_url }}">
+</head>
+<body>
+
+    <div class="jumbotron" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{site.url}}/{{ page.header-image }}'); background-position: center center;">
+        <div class="container">
+            <h1>{{page.title}}</h1>
+            {% if page.subtitle %}
+                <h4>{{page.subtitle}}</h4>
+                <br />
+            {% endif %}
+            <h5 class="small"><em>Written by {{page.author}} on {{page.date | date_to_string }}</em></h5>
+        </div>
+    </div>
+
