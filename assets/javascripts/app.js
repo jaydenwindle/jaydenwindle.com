@@ -4,10 +4,10 @@
 $(function() {
     // typing effect in header
     Typed.new('#typed', {
-        strings: ["a software developer", "an entrepreneur", "a coffee aficionado", "an avid hackathoner (is that a word?)", "lovin' life in Ottawa ✌", "a vim ninja", "a proud laptop sticker collector"],
+        strings: ["a software developer at {{site.current_company}}", "a Comp Sci major at Carleton University", "a coffee aficionado", "a huge MacGyver fan (the 80s version, obviously)", "an avid hackathoner (is that a word?)", "lovin' life in Ottawa ✌", "a vim ninja", "very proud of my laptop sticker collection"],
         typeSpeed: 50,
         backDelay: 3000,
-        loop: true
+        loop: true,
     });
 
     var projects_app = new Vue({
@@ -15,48 +15,49 @@ $(function() {
         data: {},
     })
 
+    $("#menu-modal").height(window.innerHeight)
+
+    $(".menu-toggle").click(() => {
+        $("#menu-modal").height(window.innerHeight)
+
+        $("#menu-modal").modal("toggle");
+
+        if ($('.menu-toggle i').hasClass("fa-bars")) {
+            $('.menu-toggle i').removeClass("fa-bars")
+            $('.menu-toggle i').addClass("fa-times")
+        } else {
+            $('.menu-toggle i').removeClass("fa-times")
+            $('.menu-toggle i').addClass("fa-bars")
+        }
+    });
+
 });
 
 {% raw %}
-Vue.component('gh-card', {
-    props: ['repo', 'name', 'image', 'url'],
+Vue.component('gh-info', {
+    props: ['repo'],
     template: `
-        <div class="col-md-4">
-            <div class="thumbnail project-card">
-                <img class="img-responsive" :src="image" alt="">
-                <div class="caption">
-                    <h4>{{ name }}</h4>
-                    <p class="description">{{ description }}</p>
-                    <div class="row git-info">
-                        <div class="col-xs-4">
-                            <p class="small">Stars</p>
-                            <i class="fa fa-star"></i>
-                            <span class="git-stars">{{ stargazers_count }}</span>
-                        </div>
-                        <div class="col-xs-4">
-                            <p class="small">Watching</p>
-                            <i class="fa fa-eye"></i>
-                            <span class="git-watchers">{{ watchers_count }}</span>
-                        </div>
-                        <div class="col-xs-4">
-                            <p class="small">Commits</p>
-                            <i class="fa fa-history"></i>
-                            <span class="git-commits">{{ commits_count }}</span>
-                        </div>
-                    </div>
-                    <a :href="url" class="btn btn-primary btn-block btn-rounded" role="button">
-                        Details
-                    </a> 
-                </div>
+        <div class="row git-info">
+            <div class="col-xs-4">
+                <p class="small">Stars</p>
+                <i class="fa fa-star"></i>
+                <span class="git-stars">{{ stargazers_count }}</span>
+            </div>
+            <div class="col-xs-4">
+                <p class="small">Watching</p>
+                <i class="fa fa-eye"></i>
+                <span class="git-watchers">{{ watchers_count }}</span>
+            </div>
+            <div class="col-xs-4">
+                <p class="small">Commits</p>
+                <i class="fa fa-history"></i>
+                <span class="git-commits">{{ commits_count }}</span>
             </div>
         </div>
     `,
     data() {
         return {
             repo: '',
-            name: '',
-            image: '',
-            url: '',
             description: '',
             stargazers_count: 0,
             watchers_count: 0,
@@ -73,22 +74,8 @@ Vue.component('gh-card', {
                 this.commits_count = ghData.commits_count
             });
     },
-    updated() {
-        equalizeGHCardHeights()
-    }
 })
 {% endraw %}
-
-function equalizeGHCardHeights() {
-    var maxHeight = 0
-    $(".project-card").each(function () {
-        var h = $(this).find(".description").height()
-        if (h > maxHeight) {
-            maxHeight = h 
-            $('.project-card').find(".description").height(maxHeight);
-        }
-    });
-}
 
 function getRepoInfo(repo) {
     var ghAPI = "https://api.github.com/"

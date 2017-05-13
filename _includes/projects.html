@@ -8,11 +8,19 @@
     {% endif %}
     <div class="row">
         {% for project in site.projects limit:include.limit %}
-        <gh-card 
-            repo="{{ project.repo }}" 
-            name="{{ project.name }}" 
-            image="{{ project.image }}"
-            url="{{ project.url }}"></gh-card>
+            <div class="col-md-4">
+                <div class="thumbnail project-card">
+                    <img class="img-responsive" src="{{project.image}}" alt="">
+                    <div class="caption">
+                        <h4>{{ project.name }}</h4>
+                        <p class="description">{{ project.description }}</p>
+                        <gh-info repo="{{project.repo}}"></gh-info>
+                        <a href="https://github.com/{{project.repo}}" target="_blank" class="btn btn-primary btn-block btn-rounded" role="button">
+                            Details
+                        </a> 
+                    </div>
+                </div>
+            </div>
         {% endfor %}
     </div>
     {% if include.limit != nil %}

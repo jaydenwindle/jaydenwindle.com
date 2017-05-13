@@ -1,0 +1,20 @@
+<div class="social-links">
+    {% if site.github_username != nil %}
+        <a href="https://github.com/{{site.github_username}}" target="_blank">
+            <i class="fa fa-github"></i>
+        </a>
+    {% endif %}
+    {% if site.linkedin_url != nil %}
+        <a href="{{site.linkedin_url}}" target="_blank">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    {% endif %}
+    {% if site.twitter_username != nil %}
+    <a href="https://twitter.com/{{site.twitter_username}}" target="_blank">
+            <i class="fa fa-twitter"></i>
+        </a>
+    {% endif %}
+    <a href="/contact">
+        <i class="fa fa-envelope-o"></i>
+    </a>
+</div>

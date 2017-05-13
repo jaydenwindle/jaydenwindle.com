@@ -1,4 +1,44 @@
 /* Extra small devices (phones, less than 768px) */
+
+.menu-toggle {
+    width: 100%;
+    bottom: 0;
+    outline: none !important;
+    background: #fff;
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    float: right;
+    text-align: center;
+    position: fixed;
+    z-index: 2000;
+    border: none;
+    cursor: pointer;
+    @include shadow(2);
+}
+
+.menu-modal {
+    background: rgba(0,0,0,0.7);
+    .menu-links {
+        padding-top: 100px;
+        ul {
+            display: block;
+            text-align: center;
+            li  {
+                margin-bottom: 60px;
+                margin-top: 60px;
+                a {
+                    @extend h2;
+                    color: #fff;
+                    font-weight: 700;
+                    transition: all 0.3s ease;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
 .jumbotron {
     background: #1A2980;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top left, rgba(38, 208, 206, 0.7), rgba(26, 41, 128, 0.7)), url("images/bg1.jpg");
@@ -18,6 +58,9 @@
     h2 {
         margin-bottom: 25px;
         height: 82px;
+    }
+    a, a:hover, a:focus {
+        color: #fff;
     }
     .btn {
         width: 100%;
@@ -51,6 +94,12 @@
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) {
+    .menu-toggle {
+        width: 60px;
+        right: 53px;
+        top: 50px;
+        border-radius: 30px;
+    }
     .jumbotron {
         padding: 70px 0;
     }
