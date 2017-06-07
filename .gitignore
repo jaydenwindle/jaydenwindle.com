@@ -3,3 +3,4 @@ node_modules/
 .sass-cache/
 *.swp
 s3_website.yml
+.DS_Store

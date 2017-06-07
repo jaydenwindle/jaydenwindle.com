@@ -1,6 +1,6 @@
 ---
-name: "Decode Giveaways"
-repo: "jaydenwindle/decode2017"
-image: "/assets/images/blurred-city1.jpg"
+name: "Devresu.me"
+repo: "jaydenwindle/devresume"
+image: "/assets/images/devresume.jpg"
 layout: project 
 ---

@@ -4,7 +4,7 @@
 $(function() {
     // typing effect in header
     Typed.new('#typed', {
-        strings: ["a software developer at {{site.current_company}}", "a Comp Sci major at Carleton University", "a coffee aficionado", "a huge MacGyver fan (the 80s version, obviously)", "an avid hackathoner (is that a word?)", "lovin' life in Ottawa ✌", "a vim ninja", "very proud of my laptop sticker collection"],
+        strings: ["'m a software developer at {{site.current_company}}", "'m a Comp Sci major at Carleton University", " love fine coffee (and roast my own!)", "'m a huge MacGyver fan (the 80s version, obviously 😉)", "'m an avid hackathoner (is that a word?)", "'m lovin' life in Ottawa ✌"],
         typeSpeed: 50,
         backDelay: 3000,
         loop: true,
