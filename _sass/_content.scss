@@ -73,6 +73,7 @@
         padding: 0 4px 0 4px;
         margin-top: -11px;
         img {
+            object-fit: cover;
             border-radius: 2px;
         }
     }
@@ -106,6 +107,28 @@
         }
     }
 }
+
+.blog-content {
+    blockquote {
+        font-size: $font-size-base;
+    }
+    .twitter-tweet {
+        display: block;
+        margin: 40px auto !important;
+    }
+    .share-page {
+        margin-top: 50px;
+        color: $text-color;
+        border-radius: 5px;
+
+        a {
+            font-weight: 700;
+            color: $brand-primary;
+            margin-left: 10px;
+        }
+    }
+}
+
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {

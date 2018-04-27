@@ -1,11 +1,11 @@
-    <div class="jumbotron" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{site.url}}/{{ page.header-image }}'); background-position: center center;">
+    <div class="jumbotron jumbotron-post" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{site.url}}/{{ page.header-image }}'); background-position: center center;background-size: cover;">
         <div class="container">
             <h1>{{page.title}}</h1>
             {% if page.subtitle %}
                 <h4>{{page.subtitle}}</h4>
                 <br />
             {% endif %}
-            <h5 class="small"><em>Written by {{page.author}} on {{page.date | date_to_string }}</em></h5>
+            {% include share_post.html %}
         </div>
     </div>
 

@@ -4,38 +4,36 @@
             <h2 class="text-center">Blog Posts</h2>
         </div>
     </div>
-    {% if !site.posts %}
-        <p class="text-muted text-center" style="margin-top:50px;margin-bottom:75px;">None yet, stay tuned!</p>
-    {% else %}
-        {% for post in site.posts limit:include.limit %}
-        <div class="row">
-            <div class="col-md-10 col-md-push-1">
-                <div class="panel blog-entry">
-                    <div class="panel-body">
-                        <div class="row">
-                            <a href="{{ post.url }}" class="blog-entry-link">
-                                <div class="col-md-4 blog-image">
-                                    <img class="img-responsive" src="{{post.header-image}}" alt="">
-                                </div>
-                                <div class="col-md-8">
-                                    <h4>{{ post.title }}</h4>
-                                    <h5 class="small text-muted"><em>Posted on {{ post.date | date_to_string }} by {{ post.author }}</em></h5>
-                                    <p>{{ post.excerpt | truncatewords: 25 }}</p>
-                                    <!--<p class="small text-muted">Categories: -->
-                                        <!--{% for category in post.categories %}-->
-                                        <!--<span class="label label-default">{{ category }}</span>-->
-                                        <!--{% endfor %}-->
-                                    
-                                    <!--</p>-->
-                                </div>
-                            </a>
-                        </div>
+    {% for post in site.posts limit:include.limit %}
+    <div class="row">
+        <div class="col-md-10 col-md-push-1">
+            <div class="panel blog-entry">
+                <div class="panel-body">
+                    <div class="row">
+                        <a href="{{ post.url }}" class="blog-entry-link">
+                            <div class="col-md-4 blog-image">
+                                <img class="img-responsive" src="{{post.header-image}}" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h4>{{ post.title }}</h4>
+                                <h5 class="small text-muted">
+                                    <em>Posted on {{ post.date | date_to_string }} by {{ post.author }}</em>
+                                </h5>
+                                <p>{{ post.excerpt | truncatewords: 25 }}</p>
+                                <!--<p class="small text-muted">Categories: -->
+                                    <!--{% for category in post.categories %}-->
+                                    <!--<span class="label label-default">{{ category }}</span>-->
+                                    <!--{% endfor %}-->
+                                
+                                <!--</p>-->
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
-    {% endif %}
+    </div>
+    {% endfor %}
     {% if include.limit != nil %}
         <div class="row text-center all-blog-posts">
             <a href="{{ "blog" | relative_url }}" class="btn btn-outline">More Posts <i class="fa fa-arrow-right"></i></a>
