@@ -103,9 +103,11 @@ function IndexPage({ data }) {
           <h3 className="text-3xl font-bold inline-block flex-grow">
             Projects
           </h3>
-          <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded flex flex-row">
-            See all
-          </button>
+          <Link to="/projects">
+            <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded flex flex-row">
+              See all
+            </button>
+          </Link>
         </div>
         <div className="flex flex-wrap -mx-2">
           {data.projects.nodes.map((project, index) => (
@@ -117,9 +119,11 @@ function IndexPage({ data }) {
       <section className="mb-24">
         <div className="flex flex-row flex-between mb-8">
           <h3 className="text-3xl font-bold inline-block flex-grow">Writing</h3>
-          <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded">
-            See all
-          </button>
+          <Link to="/writing">
+            <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded">
+              See all
+            </button>
+          </Link>
         </div>
         <div>
           {data.posts.nodes.map(post => (

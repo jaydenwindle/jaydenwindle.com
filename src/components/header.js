@@ -34,12 +34,12 @@ function Header({ siteTitle }) {
           } md:block md:flex md:items-center w-full md:w-auto`}
         >
           <div className="text-sm">
-            {/* <Link
+            <Link
               to="/contact"
               className="block md:inline-block mt-4 md:mt-0 no-underline"
             >
               Contact
-            </Link> */}
+            </Link>
           </div>
         </div>
       </div>

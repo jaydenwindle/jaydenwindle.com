@@ -6,7 +6,7 @@ function PostCard({ post }) {
   return (
     <Link
       key={post.id}
-      to={`/posts${post.fields.slug}`}
+      to={`/writing${post.fields.slug}`}
       className="rounded overflow-hidden mb-8 flex flex-col md:w-1/2 lg:w-full lg:flex-row"
     >
       <img
