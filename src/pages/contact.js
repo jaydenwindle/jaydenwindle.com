@@ -11,19 +11,12 @@ function ContactPage() {
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
       />
       <section>
-        <form className="mx-auto md:w-1/2">
-          <p className="leading-loose mb-8">
-            Here is an example of a form built using Tailwind. More form
-            examples are available{" "}
-            <a
-              href="https://tailwindcss.com/docs/examples/forms"
-              className="font-bold no-underline text-gray-700"
-            >
-              here
-            </a>
-            .
-          </p>
-
+        <form
+          className="mx-auto md:w-1/2"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+        >
           <label
             className="block font-bold mb-2 text-xs uppercase"
             htmlFor="first-name"
@@ -33,6 +26,7 @@ function ContactPage() {
 
           <input
             className="appearance-none block bg-gray-200 mb-6 px-3 py-2 rounded-md text-gray-700 w-full"
+            name="first-name"
             id="first-name"
             type="text"
             placeholder="Bill"
@@ -48,6 +42,7 @@ function ContactPage() {
           <input
             className="appearance-none block bg-gray-200 mb-6 px-3 py-2 rounded-md text-gray-700 w-full"
             id="last-name"
+            name="last-name"
             type="text"
             placeholder="Murray"
           />
@@ -62,6 +57,7 @@ function ContactPage() {
           <textarea
             className="appearance-none bg-gray-200 mb-6 px-3 py-2 rounded-md text-gray-700 w-full"
             id="message"
+            name="message"
             placeholder="Say something..."
             rows="8"
           />

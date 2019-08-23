@@ -31,7 +31,10 @@ function SubscribeForm() {
           <p className="text-gray-700 text-base"></p>
           <div className="flex flex-wrap -mx-3  justify-center">
             <div className="w-2/3 px-3">
-              <form onSubmit={handleSubmit} class="embeddable-buttondown-form">
+              <form
+                onSubmit={handleSubmit}
+                className="embeddable-buttondown-form"
+              >
                 <div className="flex flex-col mb-4 md:flex-row">
                   {formShown ? (
                     <>
@@ -52,7 +55,7 @@ function SubscribeForm() {
                       </button>
                     </>
                   ) : (
-                    <p class="mx-auto text-center my-4">
+                    <p className="mx-auto text-center my-4">
                       Thanks for subscribing! Chat soon :)
                     </p>
                   )}

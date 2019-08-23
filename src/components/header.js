@@ -34,12 +34,12 @@ function Header({ siteTitle }) {
           } md:block md:flex md:items-center w-full md:w-auto`}
         >
           <div className="text-sm">
-            <Link
-              to="/contact"
+            <a
+              href="https://twitter.com/messages/compose?recipient_id=496469941"
               className="block md:inline-block mt-4 md:mt-0 no-underline"
             >
               Contact
-            </Link>
+            </a>
           </div>
         </div>
       </div>
