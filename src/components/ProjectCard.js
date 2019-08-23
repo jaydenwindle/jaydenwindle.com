@@ -25,7 +25,7 @@ function ProjectCard({ project }) {
         </p>
         <div className="flex justify-center">
           <span
-            className="inline-block bg-white rounded-full px-3 py-1 text-sm font-semibold opacity-75"
+            className="inline-block bg-white rounded-full px-3 py-1 text-sm font-semibold"
             style={{ color: project.frontmatter.color }}
           >
             {project.frontmatter.type}
