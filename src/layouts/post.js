@@ -3,6 +3,7 @@ import React from "react";
 
 import Layout from "../components/layout";
 import PostHeader from "../components/PostHeader";
+import SubscribeForm from "../components/SubscribeForm";
 
 export const query = graphql`
   query PostQuery($slug: String!) {
@@ -24,10 +25,11 @@ const Post = ({ data }) => (
     <article>
       <PostHeader post={data.post} />
       <div
-        className="text-xl"
+        className="text-xl mb-24"
         dangerouslySetInnerHTML={{ __html: data.post.html }}
       />
     </article>
+    <SubscribeForm />
   </Layout>
 );
 

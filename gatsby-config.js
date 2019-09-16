@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Jayden Windle`,
-    description: `I’m a self-taught software engineer building world-class apps for mobile, web, and desktop`,
+    description: `I’m a product-focused software engineer building world-class apps for mobile, web, and desktop.`,
     author: `@jayden_windle`,
     twitter: "https://twitter.com/jayden_windle",
     github: "https://github.com/jaydenwindle",

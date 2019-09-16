@@ -42,7 +42,7 @@ function IndexPage({ data }) {
 
       <section className="mb-24">
         <div className="flex flex-row flex-between mb-8">
-          <h3 className="text-3xl font-bold inline-block flex-grow">
+          <h3 className="text-4xl font-bold inline-block flex-grow">
             Projects
           </h3>
         </div>

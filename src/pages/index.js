@@ -70,7 +70,7 @@ function IndexPage({ data }) {
 
       <section className="text-left mb-24">
         <h2 className="text-5xl font-bold inline-block my-8 lg:w-2/3">
-          Hello World! <br /> I'm Jayden Windle
+          Hello World! <br /> I'm Jayden Windle.
         </h2>
 
         <p className="text-xl lg:w-2/3 mb-8">
@@ -78,19 +78,19 @@ function IndexPage({ data }) {
         </p>
         <div>
           <a
-            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mb-1 hover:bg-gray-300 font-bold no-underline mr-4"
+            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mb-1 hover:bg-gray-300 transition font-bold no-underline mr-4"
             href={data.site.siteMetadata.twitter}
           >
             Twitter
           </a>
           <a
-            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mb-1 hover:bg-gray-300 font-bold no-underline mr-4"
+            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mb-1 hover:bg-gray-300 transition font-bold no-underline mr-4"
             href={data.site.siteMetadata.github}
           >
             Github
           </a>
           <a
-            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mb-1 hover:bg-gray-300 font-bold no-underline mr-4"
+            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mb-1 hover:bg-gray-300 transition font-bold no-underline mr-4"
             href={data.site.siteMetadata.linkedin}
           >
             Linkedin
@@ -104,7 +104,7 @@ function IndexPage({ data }) {
             Projects
           </h3>
           <Link to="/projects">
-            <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded flex flex-row">
+            <button className="bg-white hover:bg-gray-100 transition text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded flex flex-row">
               See all
             </button>
           </Link>
@@ -120,7 +120,7 @@ function IndexPage({ data }) {
         <div className="flex flex-row flex-between mb-8">
           <h3 className="text-3xl font-bold inline-block flex-grow">Writing</h3>
           <Link to="/writing">
-            <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded">
+            <button className="bg-white hover:bg-gray-100 transition text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded">
               See all
             </button>
           </Link>

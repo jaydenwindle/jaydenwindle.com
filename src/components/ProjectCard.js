@@ -9,8 +9,10 @@ function ProjectCard({ project }) {
       className="w-full md:w-1/3 px-2 mb-8 md:mb-0"
     >
       <div
-        className="rounded overflow-hidden hover:shadow-lg px-8 py-8 min-h-full flex flex-col justify-between"
-        style={{ backgroundColor: project.frontmatter.color }}
+        className="rounded overflow-hidden hover:shadow-lg transition px-8 py-8 min-h-full flex flex-col justify-between"
+        style={{
+          backgroundColor: project.frontmatter.color
+        }}
       >
         <img
           className="w-20 h-20 mx-auto mb-6"

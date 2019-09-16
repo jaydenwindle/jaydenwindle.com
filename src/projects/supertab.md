@@ -8,4 +8,4 @@ order: 3
 collection: projects
 ---
 
-My first post!
+![Screenshot](../images/supertab-screenshot.png)

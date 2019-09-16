@@ -13,7 +13,7 @@ const PostHeader = ({ post }) => (
     }}
     className="py-32 rounded flex flex-col justify-center items-center mb-16"
   >
-    <h1 className="text-5xl font-bold flex text-white px-8">
+    <h1 className="text-5xl font-bold flex text-white text-center px-16">
       {post.frontmatter.title}
     </h1>
     <p className="text-lg flex text-white">{post.frontmatter.date}</p>

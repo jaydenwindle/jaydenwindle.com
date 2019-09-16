@@ -19,5 +19,10 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: []
+  plugins: [
+    require("tailwindcss-transition")({
+      standard: "all 0.1s ease",
+      transitions: {}
+    })
+  ]
 };
