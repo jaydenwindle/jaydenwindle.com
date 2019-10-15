@@ -69,9 +69,9 @@ function IndexPage({ data }) {
       />
 
       <section className="text-left mb-24">
-        <h2 className="text-5xl font-bold inline-block my-8 lg:w-2/3">
+        <h1 className="text-5xl font-bold inline-block my-8 lg:w-2/3">
           Hello World! <br /> I'm Jayden Windle.
-        </h2>
+        </h1>
 
         <p className="text-xl lg:w-2/3 mb-8">
           {data.site.siteMetadata.description}

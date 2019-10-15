@@ -1,22 +1,15 @@
 import React from "react";
 
 const PostHeader = ({ post }) => (
-  <div
-    style={{
-      background: `linear-gradient(
-                rgba(0, 0, 0, 0.7), 
-                rgba(0, 0, 0, 0.7)
-            ),
-            url(${post.frontmatter.featuredImage.publicURL})`,
-      backgroundPosition: "center",
-      backgroundSize: "cover"
-    }}
-    className="py-32 rounded flex flex-col justify-center items-center mb-16"
-  >
-    <h1 className="text-5xl font-bold flex text-white text-center px-16">
+  <div className="mb-16">
+    <img
+      alt="blog header"
+      className="object-cover object-center rounded flex flex-col justify-center items-center mb-16"
+      src={post.frontmatter.featuredImage.publicURL}
+    />
+    <h1 className="text-5xl font-bold text-center flex mb-18">
       {post.frontmatter.title}
     </h1>
-    <p className="text-lg flex text-white">{post.frontmatter.date}</p>
   </div>
 );
 

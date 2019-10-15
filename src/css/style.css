@@ -61,3 +61,37 @@
  * @import "utilities/skew-transforms";
  */
 
+
+.post-content h1 {
+    @apply text-4xl;
+}
+
+.post-content h2 {
+    @apply text-3xl;
+    @apply pt-6;
+    @apply pb-4;
+    @apply font-bold;
+}
+
+.post-content h3 {
+    @apply text-2xl;
+}
+
+.post-content p, .post-content .gatsby-highlight {
+    @apply mb-8;
+    @apply leading-loose;
+}
+
+.post-content pre {
+    @apply text-sm;
+}
+
+.post-content .language-text {
+    @apply p-1;
+    @apply text-sm;
+}
+
+.post-content a {
+    @apply text-blue-600 underline;
+}
+  

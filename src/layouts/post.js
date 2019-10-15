@@ -25,7 +25,7 @@ const Post = ({ data }) => (
     <article>
       <PostHeader post={data.post} />
       <div
-        className="text-lg mb-24"
+        className="text-lg mb-24 post-content"
         dangerouslySetInnerHTML={{ __html: data.post.html }}
       />
     </article>
