@@ -2,7 +2,6 @@ import { Link } from "gatsby";
 import React from "react";
 
 function PostCard({ post }) {
-  console.log(post);
   return (
     <Link
       key={post.id}

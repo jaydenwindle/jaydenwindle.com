@@ -2,7 +2,6 @@ import { Link } from "gatsby";
 import React from "react";
 
 function ProjectCard({ project }) {
-  console.log(project);
   return (
     <Link
       to={`/projects${project.fields.slug}`}
