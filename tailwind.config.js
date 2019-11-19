@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       sans: [
         "Avenir",
+        "Inter UI",
         "-apple-system",
         "BlinkMacSystemFont",
         "Segoe UI",
