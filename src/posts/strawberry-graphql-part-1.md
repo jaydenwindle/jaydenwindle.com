@@ -6,7 +6,7 @@ featuredImage: ../images/strawberry.jpg
 collection: posts
 ---
 
-Strawberry is a GraphQL server library for python that's based on Python 3's dataclasses. It's designed to help you build GraphQL APIs quickly and easily. In this post we're going to build a GraphQL API together using strawberry.
+Strawberry is a GraphQL server library for python that's based on Python 3's dataclasses. It's designed to help you build GraphQL APIs quickly and easily. In this post we're going to build a GraphQL API using strawberry.
 
 
 If this is your first time working with GraphQL, I'd recommend reading through the first 4 lessons of the [GraphQL Fundamentals](https://www.howtographql.com/basics/0-introduction/) course to learn about the basics of GraphQL.
@@ -73,11 +73,11 @@ You should receive a response that looks like:
 }
 ```
 
-Congrats! You've written your first strawberry resolver using system types.
+Congrats! You've written your first strawberry resolver!
 
 ## Custom Types
 
-Let's try a more complicated example. Let's say we want to build a todo list app. We'll need to be able to return data that's not a python system type. To do this, we'll need to define a custom GraphQL type. Using strawberry, we can define a custom GraphQL type like so:
+Let's try a more interesting example. Let's say we want to build a todo list app. We'll need to be able to return a custom data type to represent a todo object. To do this, we'll need to define a custom GraphQL type. Using strawberry, we can define a custom GraphQL type like so:
 
 ```python
 @strawberry.type
