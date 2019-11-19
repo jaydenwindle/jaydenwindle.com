@@ -40,8 +40,7 @@ class Query:
     def hello(self, info) -> str:
         return "world"
 
-schema = straw
-berry.Schema(query=Query)
+schema = strawberry.Schema(query=Query)
 ```
 
 We start by defining a `Query` type. We use the `strawberry.type` decorator to mark this class as a GraphQL type. Then, we define a resolver function using the `strawberry.field` decorator. Resolver functions take in two positional arguments (`self` and `info`), and must specify a return type. In this case, we're defining a resolver function called `hello`, which returns the string `"world"`.
