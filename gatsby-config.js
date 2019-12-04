@@ -22,15 +22,13 @@ module.exports = {
       }
     },
     `gatsby-plugin-postcss`,
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true,
-        tailwind: true,
-        purgeOnly: [`src/css/style.css`],
-        whiteList: ["post-content", "gatsby-highlight"]
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-purgecss`,
+    //   options: {
+    //     tailwind: true,
+    //     purgeOnly: [`src/css/style.css`]
+    //   }
+    // },
     `gatsby-plugin-offline`,
     {
       resolve: "gatsby-source-filesystem",
