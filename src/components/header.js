@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
+import { ExternalLink } from "react-feather";
 
 import logo from "../images/logo.png";
 
@@ -11,7 +12,11 @@ function Header({ siteTitle }) {
     <nav className="">
       <div className="flex flex-wrap items-center justify-between max-w-4xl mx-auto p-4 md:p-8">
         <Link to="/" className="flex items-center no-underline">
-          <img src={logo} className="w-12 h-12 rounded-full hover:shadow" />
+          <img
+            src={logo}
+            alt="logo"
+            className="w-12 h-12 rounded-full hover:shadow"
+          />
         </Link>
 
         <button
@@ -34,12 +39,37 @@ function Header({ siteTitle }) {
           } md:block md:flex md:items-center w-full md:w-auto`}
         >
           <div className="text-sm">
+            <Link
+              to="/writing"
+              className="block md:inline-block mt-4 md:mt-0 no-underline hover:underline"
+            >
+              Writing
+            </Link>
+          </div>
+          <div className="text-sm md:ml-6">
+            <Link
+              to="/projects"
+              className="block md:inline-block mt-4 md:mt-0 no-underline hover:underline"
+            >
+              Projects
+            </Link>
+          </div>
+          <div className="text-sm md:ml-6 flex flex-row items-center">
             <a
-              href="https://twitter.com/messages/compose?recipient_id=496469941"
-              className="block md:inline-block mt-4 md:mt-0 no-underline"
+              href="https://jaydenwindle.podia.com/"
+              className="block md:inline-block mt-4 md:mt-0 no-underline hover:underline"
+            >
+              Courses
+            </a>
+            <ExternalLink size={14} className="ml-1 mt-4 md:mt-0" />
+          </div>
+          <div className="text-sm md:ml-6 flex flex-row items-center">
+            <Link
+              to="/contact"
+              className="block md:inline-block mt-4 md:mt-0 no-underline hover:underline"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>

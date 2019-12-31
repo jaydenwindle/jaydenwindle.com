@@ -17,17 +17,6 @@ function ContactPage() {
           method="POST"
           data-netlify="true"
         >
-          <p className="text-center mb-16">
-            I'd love hearing from random folks on the internet! The best way to
-            reach me is via{" "}
-            <a
-              href="https://twitter.com/messages/compose?recipient_id=496469941"
-              className="text-blue-600 underline"
-            >
-              twitter DM
-            </a>
-            , but if you prefer email you can contact me using the form below.
-          </p>
           <label
             className="block font-bold mb-2 text-xs uppercase"
             htmlFor="name"
