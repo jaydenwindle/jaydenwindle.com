@@ -1,5 +1,5 @@
 ---
-title: "GraphQL Queries with Strawberry"
+title: "Building GraphQL APIs with Strawberry Part 1: Queries"
 date: 2019-09-22
 excerpt: Strawberry is a modern GraphQL server library for Python that's simple to understand and quick to ...
 featuredImage: ../images/strawberry.jpg
