@@ -6,6 +6,7 @@ import SEO from "../components/seo";
 import ProjectCard from "../components/ProjectCard";
 import PostCard from "../components/PostCard";
 import SubscribeForm from "../components/SubscribeForm";
+import { ArrowRight } from "react-feather";
 
 export const query = graphql`
   query HomeQuery {
@@ -77,12 +78,13 @@ function IndexPage({ data }) {
           {data.site.siteMetadata.description}
         </p>
 
-        {/* <Link to="/consulting">
-          <button className="bg-white hover:bg-gray-100 transition text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded flex flex-row">
+        <Link to="/contact">
+          <button className="bg-gray-900 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded flex flex-row">
             Let's work together
+            <ArrowRight className="ml-4" />
           </button>
-        </Link> */}
-        <div>
+        </Link>
+        {/* <div>
           <a
             className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mb-1 hover:bg-gray-300 transition font-bold no-underline mr-4"
             href={data.site.siteMetadata.twitter}
@@ -101,7 +103,7 @@ function IndexPage({ data }) {
           >
             Linkedin
           </a>
-        </div>
+        </div> */}
       </section>
 
       {/* <section className="mb-24">

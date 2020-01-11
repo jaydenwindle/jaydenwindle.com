@@ -13,7 +13,7 @@ function PostCard({ post }) {
         src={post.frontmatter.featuredImage.publicURL}
         alt="Sunset in the mountains"
       />
-      <div className="px-6 py-4 flex flex-col justify-between">
+      <div className="px-2 py-4 flex flex-col justify-between lg:px-6">
         <div className="font-bold text-2xl hover:text-blue-500 mb-2 transition">
           {post.frontmatter.title}
         </div>
