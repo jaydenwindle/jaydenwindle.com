@@ -13,10 +13,11 @@ function ContactPage() {
       <section>
         <form
           className="mx-auto md:w-3/4"
-          name="contact"
+          name="Contact Form"
           method="POST"
           data-netlify="true"
         >
+          <input type="hidden" name="form-name" value="Contact Form" />
           <p className="text-center mb-16">
             I'd love hearing from random folks on the internet! The best way to
             reach me is via{" "}

@@ -6,7 +6,6 @@ import SEO from "../components/seo";
 import ProjectCard from "../components/ProjectCard";
 import PostCard from "../components/PostCard";
 import SubscribeForm from "../components/SubscribeForm";
-import { ChevronRight } from "react-feather";
 
 export const query = graphql`
   query HomeQuery {
