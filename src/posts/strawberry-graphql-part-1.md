@@ -1,8 +1,8 @@
 ---
-title: "Building GraphQL APIs with Strawberry Part 1: Queries"
+title: "Building GraphQL APIs with Strawberry (Part 1: Queries)"
 date: 2019-09-22
 excerpt: Strawberry is a modern GraphQL server library for Python that's simple to understand and quick to ...
-featuredImage: ../images/strawberry.jpg
+featuredImage: ../images/strawberry-devto.jpg
 collection: posts
 ---
 
@@ -18,7 +18,7 @@ Without further ado, let's dive in!
 ## Environment Setup
 To start, we're going to set up our development environment. Because Strawberry uses some newer python features (like dataclasses and type hints), you'll need to make sure you're running python 3.7 or above. You can check which version of python you have installed by running `$ python --version`. If you don't have python >=3.7 installed on your machine, you'll need to set that up. I recommend using `pyenv` for this.
 
-Once you've got python 3.7 installed, you'll need to set up a virtual environment and install strawberry.
+Once you've got python 3.7 installed, you'll need to set up a virtual environment and install Strawberry.
 
 ```bash
 $ python --version
@@ -32,7 +32,7 @@ $ pip install strawberry-graphql
 Nice! You're ready to get started.
 
 ## Hello World!
-Let's create a file called `app.py` and wire up a basic strawberry app:
+Let's create a file called `app.py` and wire up a basic Strawberry app:
 
 ```python
 import strawberry
@@ -154,7 +154,7 @@ Awesome! We've created a custom type and a custom resolver that returns that typ
 
 ## Resolver Arguments
 
-Another important feature of any todo app is being able to filter your todos by their status. In order to do that, we'd need to pass in extra parameters to our GraphQL query. With strawberry, you can add an parameter to any resolver definition by adding a typed input argument to the resolver function. If you provide a default value for the input argument, the parameter will be optional in your GraphQL schema.
+Another important feature of any todo app is being able to filter your todos by their status. In order to do that, we'd need to pass in extra parameters to our GraphQL query. With Strawberry, you can add an parameter to any resolver definition by adding a typed input argument to the resolver function. If you provide a default value for the input argument, the parameter will be optional in your GraphQL schema.
 
 In our case, we want to be able to filter our todos by their `done` value, so we'll add an argument called `done` of the type `bool`. We'll also add some logic to the resolver to filter the todos in our array:
 
@@ -195,4 +195,4 @@ will return:
 }
 ```
 
-There you go! You've now got a working GraphQL API set up using strawberry. This is only scratching the surface of what strawberry can do. If you want to learn more, check out strawberry on [Github](https://github.com/strawberry-graphql/strawberry).
+There you go! You've now got a working GraphQL API set up using Strawberry. This is only scratching the surface of what Strawberry can do. If you want to learn more, check out Strawberry on [Github](https://github.com/strawberry-graphql/strawberry).
