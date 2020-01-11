@@ -54,7 +54,7 @@ function Header({ siteTitle }) {
               Projects
             </Link>
           </div>
-          <div className="text-sm md:ml-6 flex flex-row items-center">
+          {/* <div className="text-sm md:ml-6 flex flex-row items-center">
             <a
               href="https://jaydenwindle.podia.com/"
               className="block md:inline-block mt-4 md:mt-0 no-underline hover:underline"
@@ -62,7 +62,7 @@ function Header({ siteTitle }) {
               Courses
             </a>
             <ExternalLink size={14} className="ml-1 mt-4 md:mt-0" />
-          </div>
+          </div> */}
           <div className="text-sm md:ml-6 flex flex-row items-center">
             <Link
               to="/contact"

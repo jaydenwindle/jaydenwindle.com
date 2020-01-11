@@ -26,7 +26,7 @@ function ContactPage() {
             >
               twitter DM
             </a>
-            , but if you prefer email you can contact me using the form below.
+            , but if you prefer email you can send me a message here.
           </p>
           <label
             className="block font-bold mb-2 text-xs uppercase"
