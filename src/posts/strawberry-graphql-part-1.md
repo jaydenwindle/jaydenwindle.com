@@ -6,7 +6,7 @@ featuredImage: ../images/strawberry.jpg
 collection: posts
 ---
 
-*This post is part 1 in a series of blog posts I'm writing as I work on the official documentation for Strawberry.*
+*Note: This post is part 1 in a series of blog posts I'm writing as I work on the official documentation for Strawberry.*
 
 Strawberry is a modern GraphQL server library for Python that's simple to understand and quick to get started with. In this series we're going to learn how to use Strawberry to build a fully-featured GraphQL API.
 
@@ -31,7 +31,7 @@ $ pip install strawberry-graphql
 
 Nice! You're ready to get started.
 
-## Hello World Query
+## Hello World!
 Let's create a file called `app.py` and wire up a basic strawberry app:
 
 ```python
