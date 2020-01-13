@@ -164,7 +164,7 @@ class Query:
     @strawberry.field
     def todos(self, info, done: bool = None) -> List[TodoType]:
         if done is not None:
-            return filter(lambda todo: todo.done, todos)
+            return filter(lambda todo: todo.done == done, todos)
         else:
             return todos
 ```

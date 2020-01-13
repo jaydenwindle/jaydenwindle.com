@@ -84,26 +84,6 @@ function IndexPage({ data }) {
             <ArrowRight className="ml-4" />
           </button>
         </Link>
-        {/* <div>
-          <a
-            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mb-1 hover:bg-gray-300 transition font-bold no-underline mr-4"
-            href={data.site.siteMetadata.twitter}
-          >
-            Twitter
-          </a>
-          <a
-            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mb-1 hover:bg-gray-300 transition font-bold no-underline mr-4"
-            href={data.site.siteMetadata.github}
-          >
-            Github
-          </a>
-          <a
-            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 mb-1 hover:bg-gray-300 transition font-bold no-underline mr-4"
-            href={data.site.siteMetadata.linkedin}
-          >
-            Linkedin
-          </a>
-        </div> */}
       </section>
 
       {/* <section className="mb-24">
