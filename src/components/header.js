@@ -54,6 +54,14 @@ function Header({ siteTitle }) {
               Projects
             </Link>
           </div>
+          <div className="text-sm md:ml-6">
+            <Link
+              to="/consulting"
+              className="block md:inline-block mt-4 md:mt-0 no-underline hover:underline"
+            >
+              Consulting
+            </Link>
+          </div>
           {/* <div className="text-sm md:ml-6 flex flex-row items-center">
             <a
               href="https://jaydenwindle.podia.com/"

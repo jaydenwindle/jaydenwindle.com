@@ -78,8 +78,8 @@ function IndexPage({ data }) {
           {data.site.siteMetadata.description}
         </p>
 
-        <Link to="/contact">
-          <button className="bg-gray-900 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded flex flex-row">
+        <Link to="/consulting">
+          <button className="bg-gray-900 hover:bg-gray-800 hover:shadow-lg text-white font-bold py-2 px-4 rounded flex flex-row">
             Let's work together
             <ArrowRight className="ml-4" />
           </button>
