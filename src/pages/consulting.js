@@ -3,7 +3,6 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import { Link } from "gatsby";
 import { ArrowRight } from "react-feather";
 
 function ContactPage() {
@@ -11,7 +10,12 @@ function ContactPage() {
     <Layout>
       <SEO
         title="Consulting"
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        keywords={[
+          `consulting`,
+          `Jayden Windle`,
+          `software`,
+          `software engineer`
+        ]}
       />
       <section className="text-left mb-24">
         <h1 className="text-5xl font-bold inline-block my-8 lg:w-2/3">
@@ -41,8 +45,8 @@ function ContactPage() {
         </h3>
         <p className="text-xl mb-8">
           Hi, I'm Jayden! I'm a product-focused software engineer with over 6
-          years of experience working with startups and established companies to
-          build amazing products that delight users and drive real growth.
+          years of experience helping startups and established companies build
+          amazing products that delight users and drive real growth.
         </p>
         <p className="text-xl mb-8">
           No matter what stage you're at in your project or what your

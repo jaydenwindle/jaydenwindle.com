@@ -36,8 +36,13 @@ function IndexPage({ data }) {
   return (
     <Layout>
       <SEO
-        title="Home"
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        title="Projects"
+        keywords={[
+          `projects`,
+          `Jayden Windle`,
+          `software`,
+          `software engineer`
+        ]}
       />
 
       <section className="mb-24">
