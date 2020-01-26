@@ -45,7 +45,7 @@ function Layout({ children }) {
               GitHub
             </a>
             <a
-              href={data.site.siteMetadata.github}
+              href={data.site.siteMetadata.linkedin}
               className="font-bold no-underline ml-4"
             >
               Linkedin
