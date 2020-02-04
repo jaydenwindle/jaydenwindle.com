@@ -149,3 +149,4 @@ Open up a new tab in your browser, and open up the developer tools. In the conso
 
 Congrats! You now know how to add Websocket support to your Django application using ASGI with zero extra dependencies. Now go build something awesome with it 😎
 
+*👋 Hi, I'm Jayden. I love building apps and teaching others how to build apps. For more posts about building apps with Django, React, and GraphQL, follow me on [Twitter](windle.dev/tw) or subscribe to the newsletter below.*
