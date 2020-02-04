@@ -47,9 +47,9 @@ function IndexPage({ data }) {
 
       <section className="mb-24">
         <div className="flex flex-row flex-between mb-8">
-          <h3 className="text-4xl font-bold inline-block flex-grow">
+          <h1 className="text-4xl font-bold inline-block flex-grow">
             Projects
-          </h3>
+          </h1>
         </div>
         <div className="flex flex-wrap -mx-2">
           {data.projects.nodes.map((project, index) => (
