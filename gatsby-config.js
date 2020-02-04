@@ -68,6 +68,13 @@ module.exports = {
       options: {
         siteUrl: `https://jaydenwindle.com`
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-39259114-2"
+      }
     }
   ]
 };
