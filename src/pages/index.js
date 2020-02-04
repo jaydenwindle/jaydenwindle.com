@@ -66,7 +66,7 @@ function IndexPage({ data }) {
     <Layout>
       <SEO
         title="Jayden Windle - Product-focused Software Engineer"
-        description="Hi, I'm Jayden. I’m a product-focused software engineer building world-class apps for mobile, web, and desktop."
+        description="Hi, I'm Jayden Windle. I’m a product-focused software engineer building world-class apps for mobile, web, and desktop. Let's work together."
         keywords={[`Jayden Windle`, `software`, `software engineer`]}
       />
 
