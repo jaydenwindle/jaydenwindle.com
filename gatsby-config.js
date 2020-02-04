@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Jayden Windle`,
     description: `I’m a product-focused software engineer building world-class apps for mobile, web, and desktop.`,
+    siteUrl: "https://jaydenwindle.com",
     author: `@jayden_windle`,
     twitter: "https://twitter.com/jayden_windle",
     github: "https://github.com/jaydenwindle",
@@ -59,6 +60,8 @@ module.exports = {
           `gatsby-remark-prismjs`
         ]
       }
-    }
+    },
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`
   ]
 };
