@@ -35,7 +35,7 @@ function IndexPage({ data }) {
   return (
     <Layout>
       <SEO
-        title="Writing"
+        title="Writing | Jayden Windle"
         keywords={[`writing`, `Jayden Windle`, `software`, `software engineer`]}
       />
 

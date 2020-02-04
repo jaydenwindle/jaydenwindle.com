@@ -65,7 +65,7 @@ function IndexPage({ data }) {
   return (
     <Layout>
       <SEO
-        title="Home"
+        title="Jayden Windle - Product-focused Software Engineer"
         keywords={[`Jayden Windle`, `software`, `software engineer`]}
       />
 
@@ -74,9 +74,9 @@ function IndexPage({ data }) {
           Hi, I'm Jayden Windle.
         </h1>
 
-        <p className="text-xl lg:w-2/3 mb-8">
+        <h2 className="text-xl lg:w-2/3 mb-8">
           {data.site.siteMetadata.description}
-        </p>
+        </h2>
 
         <Link to="/consulting">
           <button className="bg-gray-900 hover:bg-gray-800 hover:shadow-lg text-white font-bold py-2 px-4 rounded flex flex-row">

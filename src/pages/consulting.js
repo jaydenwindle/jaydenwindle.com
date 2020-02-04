@@ -9,7 +9,7 @@ function ContactPage() {
   return (
     <Layout>
       <SEO
-        title="Consulting"
+        title="Consulting | Jayden Windle"
         keywords={[
           `consulting`,
           `Jayden Windle`,

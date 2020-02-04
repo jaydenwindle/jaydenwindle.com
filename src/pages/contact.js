@@ -7,7 +7,7 @@ function ContactPage() {
   return (
     <Layout>
       <SEO
-        title="Contact"
+        title="Contact | Jayden Windle"
         keywords={[`contact`, `Jayden Windle`, `software`, `software engineer`]}
       />
       <section>
