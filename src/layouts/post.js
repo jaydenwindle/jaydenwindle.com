@@ -12,6 +12,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        excerpt
         featuredImage {
           publicURL
         }
@@ -26,6 +27,7 @@ const Post = ({ data }) => (
     <SEO
       title={`${data.post.frontmatter.title} | Jayden Windle`}
       keywords={[`Jayden Windle`, `software`, `software engineer`]}
+      description={data.post.frontmatter.excerpt}
     />
     <article>
       <PostHeader post={data.post} />

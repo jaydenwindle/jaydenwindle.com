@@ -9,7 +9,8 @@ function ContactPage() {
   return (
     <Layout>
       <SEO
-        title="Consulting | Jayden Windle"
+        title="Let's bring your app idea to life"
+        description="I help companies solve problems and drive growth by turning big ideas into world-class products."
         keywords={[
           `consulting`,
           `Jayden Windle`,
@@ -22,10 +23,10 @@ function ContactPage() {
           Let's bring your app idea to life.
         </h1>
 
-        <p className="text-xl lg:w-2/3 mb-8">
+        <h2 className="text-xl lg:w-2/3 mb-8">
           I help companies solve problems and drive growth by turning big ideas
           into world-class products.
-        </p>
+        </h2>
 
         <a
           href="https://calendly.com/jaydenwindle/intro-call?month=2020-01"
