@@ -1,8 +1,8 @@
 {
-  "name": "@oddstronaut/gatsby-starter-tailwind",
-  "description": "Gatsby starter styled with Tailwind",
+  "name": "jaydenwindle.com",
+  "description": "My personal website and blog",
   "version": "3.0.96",
-  "author": "Taylor Bryant <taylor@bryant.io>",
+  "author": "Jayden Windle <jaydenwindle@gmail.com>",
   "dependencies": {
     "feather-icons": "^4.24.1",
     "gatsby": "2.13.76",

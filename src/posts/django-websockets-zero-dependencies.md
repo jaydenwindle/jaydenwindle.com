@@ -1,12 +1,12 @@
 ---
 title: "Adding Websockets to your Django app with zero dependencies"
 date: 2020-02-04
-excerpt: Now that Django 3.0 ships with ASGI support out of the box, adding Websockets to your Django app is simple and requires zero dependencies.
+excerpt: Now that Django 3.0 ships with ASGI support out of the box, adding Websockets to your Django app is simple and requires no extra dependencies.
 featuredImage: ../images/django-websockets-zero-dependencies.jpg
 collection: posts
 ---
 
-Now that Django 3.0 ships with ASGI support out of the box, adding Websockets to your Django app is simple and requires zero dependencies. In this post, you'll learn how to set up Websockets in Django using a custom ASGI application, and how to send and receive data to your Websocket clients.
+Now that Django 3.0 ships with ASGI support out of the box, adding Websockets to your Django app is simple and requires no extra dependencies. In this post, you'll learn how to set up Websockets in Django using a custom ASGI application, and how to send and receive data to your Websocket clients.
 
 ## Getting started
 To start, you'll need Python >= 3.6 installed on your machine. Django 3.0 is only compatible with Python 3.6 and greater because it makes use of the `async` and `await` keywords. Once you've got your Python version setup, create a project directory and `cd` into it. Then, install Django inside of a virtualenv and create a new Django app in your project directory. I'm going to use `pipenv` to do this:
