@@ -1,5 +1,6 @@
 import { graphql } from "gatsby";
 import React from "react";
+import SEO from "../components/seo";
 
 import Layout from "../components/layout";
 import PostHeader from "../components/PostHeader";
@@ -22,6 +23,10 @@ export const query = graphql`
 
 const Post = ({ data }) => (
   <Layout>
+    <SEO
+      title={`${data.post.frontmatter.title} | Jayden Windle`}
+      keywords={[`Jayden Windle`, `software`, `software engineer`]}
+    />
     <article>
       <PostHeader post={data.post} />
       <div
