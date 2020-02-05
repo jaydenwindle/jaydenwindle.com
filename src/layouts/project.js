@@ -34,7 +34,7 @@ const Project = ({ data }) => (
       <ProjectHeader project={data.project} />
       <br />
       <div
-        className="text-xl mb-24"
+        className="text-xl mb-24 post-content"
         dangerouslySetInnerHTML={{ __html: data.project.html }}
       />
     </article>

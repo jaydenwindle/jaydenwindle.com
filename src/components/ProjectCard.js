@@ -5,7 +5,7 @@ function ProjectCard({ project }) {
   return (
     <Link
       to={`/projects${project.fields.slug}`}
-      className="w-full md:w-1/3 px-2 mb-8 md:mb-0"
+      className="w-full md:w-1/3 px-2 mb-8 md:mb-4"
     >
       <div
         className="rounded overflow-hidden hover:shadow-lg transition px-8 py-8 min-h-full flex flex-col justify-between"
@@ -14,7 +14,7 @@ function ProjectCard({ project }) {
         }}
       >
         <img
-          className="w-20 h-20 mx-auto mb-6"
+          className="w-20 h-20 mx-auto mb-6 object-contain"
           src={project.frontmatter.logo.publicURL}
           alt={`${project.frontmatter.title} logo`}
         />

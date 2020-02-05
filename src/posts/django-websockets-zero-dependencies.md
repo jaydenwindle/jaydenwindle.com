@@ -1,12 +1,12 @@
 ---
 title: "Adding Websockets to your Django app with zero dependencies"
 date: 2020-02-04
-excerpt: Now that Django 3.0 ships with ASGI support out of the box, adding Websockets to your Django app is simple and requires no extra dependencies.
+excerpt: Now that Django 3.0 ships with ASGI support out of the box, adding Websockets to your Django app no extra dependencies.
 featuredImage: ../images/django-websockets-zero-dependencies.jpg
 collection: posts
 ---
 
-Now that Django 3.0 ships with ASGI support out of the box, adding Websockets to your Django app is simple and requires no extra dependencies. In this post, you'll learn how to set up Websockets in Django using a custom ASGI application, and how to send and receive data to your Websocket clients.
+Now that Django 3.0 ships with ASGI support out of the box, adding Websockets to your Django app requires no extra dependencies. In this post, you'll learn how to set up Websockets in Django using a custom ASGI application, and how to send and receive data to your Websocket clients.
 
 ## Getting started
 To start, you'll need Python >= 3.6 installed on your machine. Django 3.0 is only compatible with Python 3.6 and greater because it makes use of the `async` and `await` keywords. Once you've got your Python version setup, create a project directory and `cd` into it. Then, install Django inside of a virtualenv and create a new Django app in your project directory. I'm going to use `pipenv` to do this:
@@ -84,11 +84,11 @@ async def websocket_appliation(scope, receive, send):
     pass
 ```
 
-Next, lets implement some simple logic for our websocket application. We're going to listen for all websocket connections, and when the client send the string `"ping"`, we'll respond with the string `"pong!"`. Inside of our `websocket_application`, we're going to define an indefinite loop. Inside that loop, we'll wait for any new events that the server receives from the client. Then we'll act on the content of the event.
+Next, lets implement some logic for our websocket application. We're going to listen for all websocket connections, and when the client send the string `"ping"`, we'll respond with the string `"pong!"`. Inside of our `websocket_application`, we're going to define an indefinite loop. Inside that loop, we'll wait for any new events that the server receives from the client. Then we'll act on the content of the event.
 
 To start, lets handle connections. When a new websocket client connects to the server, we'll receive an `event` where `event['type'] == 'websocket.connect'`. In order to allow this connection, we'll send and event where `event['type'] == 'websocket.accept'`. This will complete the websocket handshake and initialize the websocket connection.
 
-We'll also need to handle disconnection events when a client terminates their connection with the server. To do that, we'll listen for an `event` where `event.['type'] == 'websocket.disconnect'`. When a client disconnects, we'll break out of our indefinite loop.
+We'll also need to handle disconnection events when a client terminates their connection with the server. To do that, we'll listen for an `event` where `event['type'] == 'websocket.disconnect'`. When a client disconnects, we'll break out of our indefinite loop.
 
 Finally, we need to handle requests from the client. To do that, we'll listen for an  `event` where `event['type'] == 'websocket.receive'`. When we receive the event, we'll check and see if `event['text']` is equal to the value `"ping"`. If it is, we'll send an `event` with `event['type']` set to `'websocket.send'`, and `event['text']` equal to `'pong!'`
 
@@ -149,4 +149,4 @@ Open up a new tab in your browser, and open up the developer tools. In the conso
 
 Congrats! You now know how to add Websocket support to your Django application using ASGI with zero extra dependencies. Now go build something awesome with it 😎
 
-*👋 Hi, I'm Jayden. I love building apps and teaching others how to build apps. For more posts about building apps with Django, React, and GraphQL, follow me on [Twitter](windle.dev/tw) or subscribe to the newsletter below.*
+*👋 Hi, I'm Jayden. I love building apps and teaching others how to build apps. For more posts about building apps with Django, React, and GraphQL, follow me on [Twitter](https://windle.dev/tw) or subscribe to the newsletter below.*

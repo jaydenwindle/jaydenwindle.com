@@ -4,7 +4,7 @@ excerpt: Find open mic nights in your city
 type: mobile app
 color: "#FF9966"
 logo: ../images/stagehunter.png
-order: 2
+order: 4
 collection: projects
 ---
 

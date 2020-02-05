@@ -21,6 +21,7 @@ export const query = graphql`
     projects: allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___order] }
       filter: { frontmatter: { collection: { eq: "projects" } } }
+      limit: 3
     ) {
       nodes {
         id
@@ -125,11 +126,11 @@ function IndexPage({ data }) {
           <h3 className="text-3xl font-bold inline-block flex-grow">
             Projects
           </h3>
-          {/* <Link to="/projects">
+          <Link to="/projects">
             <button className="bg-white hover:bg-gray-100 transition text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded flex flex-row">
               See all
             </button>
-          </Link> */}
+          </Link>
         </div>
         <div className="flex flex-wrap -mx-2">
           {data.projects.nodes.map((project, index) => (
