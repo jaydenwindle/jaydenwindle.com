@@ -87,7 +87,7 @@ async def application(scope, receive, send):
         raise NotImplementedError(f"Unknown scope type {scope['type']}")
 
 # websocket.py
-async def websocket_appliation(scope, receive, send):
+async def websocket_application(scope, receive, send):
     pass
 ```
 
@@ -105,7 +105,7 @@ After setting up the Websocket logic, our `websocket.py` file should look someth
 
 ```python
 # websocket.py
-async def websocket_appliation(scope, receive, send):
+async def websocket_application(scope, receive, send):
     while True:
         event = await receive()
 
