@@ -8,6 +8,7 @@ function ContactPage() {
     <Layout>
       <SEO
         title="Contact | Jayden Windle"
+        description="I'm excited to hear from you! The best way to reach me is via twitter DM, but if you prefer email you can send me a message here."
         keywords={[`contact`, `Jayden Windle`, `software`, `software engineer`]}
       />
       <section>
