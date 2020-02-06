@@ -45,7 +45,7 @@ function ContactPage() {
           Who am I?
         </h3>
         <p className="text-xl mb-8">
-          Hi, I'm Jayden! I'm a product-focused software engineer with over 6
+          Hi, I'm Jayden! I'm a product-focused software engineer with over 7
           years of experience helping startups and established companies build
           amazing products that delight users and drive real growth.
         </p>
