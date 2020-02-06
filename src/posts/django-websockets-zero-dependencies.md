@@ -148,7 +148,7 @@ To test the Websocket connection, open up your browser's development tools in a 
 
 ```javascript
 > ws = new WebSocket('ws://localhost:8000/')
-  WebSocket {url: "ws://localhost:8000/", readyState: 0, bufferedAmount: 0, onopen: null, onerror: null, …}
+  WebSocket {url: "ws://localhost:8000/", readyState: 0, bufferedAmount: 0, onopen: null, onerror: null, …}
 > ws.onmessage = event => console.log(event.data)
   event => console.log(event.data)
 > ws.send("ping")
