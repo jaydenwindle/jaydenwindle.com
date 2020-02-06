@@ -156,6 +156,6 @@ To test the Websocket connection, open up your browser's development tools in a 
   pong!
 ```
 
-Congrats! You now know how to add Websocket support to your Django application using ASGI. Now go build something awesome with it 😎
+Congrats! Now you know how to add Websocket support to your Django application using ASGI. Go build something awesome with it 😎
 
 *👋 Hi, I'm Jayden. I love building apps and teaching others how to build apps. For more posts about building apps with Django, React, and GraphQL, follow me on [Twitter](https://windle.dev/tw) or subscribe to the newsletter below.*
