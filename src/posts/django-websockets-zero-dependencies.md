@@ -6,7 +6,7 @@ featuredImage: ../images/django-websockets-zero-dependencies.jpg
 collection: posts
 ---
 
-Now that Django 3.0 ships with [ASGI](https://florimond.dev/blog/articles/2019/08/introduction-to-asgi-async-python-web/) support out of the box, adding Websockets to your Django app requires no extra dependencies. In this post, you'll learn how to handle Websockets with Django using a custom ASGI application. We'll go over how to handle Websocket connections, look at how to send and receive data, and implement some business logic in a sample ASGI application.
+Now that Django 3.0 ships with [ASGI](https://florimond.dev/blog/articles/2019/08/introduction-to-asgi-async-python-web/) support out of the box, adding Websockets to your Django app requires no extra dependencies. In this post, you'll learn how to handle Websockets with Django by extending the default ASGI application. We'll go over how to handle Websocket connections, send and receive data, and implement business logic in a sample ASGI application.
 
 ## Getting started
 To start, you'll need Python >= 3.6 installed on your machine. Django 3.0 is only compatible with Python 3.6 and greater because it makes use of the `async` and `await` keywords. Once you've got your Python version setup, create a project directory and `cd` into it. Then, install Django inside of a virtualenv and create a new Django app in your project directory:
@@ -31,7 +31,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'websocket_app.settings')
 application = get_asgi_application()
 ```
 
-This file provides the default Django ASGI setup, and exposes an ASGI service called `application` which can be run using an ASGI server such as `uvicorn` or `daphne`. Before we go much further, let's go over the structure of an ASGI application.
+This file provides the default Django ASGI setup, and exposes an ASGI application called `application` which can be run using an ASGI server such as `uvicorn` or `daphne`. Before we go much further, let's take a look at how ASGI applications are structured.
 
 ## ASGI app structure
 
@@ -39,11 +39,11 @@ This file provides the default Django ASGI setup, and exposes an ASGI service ca
 
 An ASGI application is a single `async` function which takes in 3 parameters: `scope` (the context of the current request), `receive` (an `async` function that lets you listen for incoming events), and `send` (an `async` function that lets you send events to the client).
 
-Inside of an ASGI application, you can route requests based on the values in the `scope` dictionary. For example, you can check whether the request is an HTTP request or a Websocket request by checking the value of `scope['type']`. To listen for data from the client, you can `await` the `receive` function. When you're ready to send data to the client, you can `await` the `send` function, and pass in any data you want to send to the client. Let's take a look at how this works in our application.
+Inside of an ASGI application, you can route requests based on values in the `scope` dictionary. For example, you can check whether the request is an HTTP request or a Websocket request by checking the value of `scope['type']`. To listen for data from the client, you can `await` the `receive` function. When you're ready to send data to the client, you can `await` the `send` function, and pass in any data you want to send to the client. Let's take a look at how this works in a sample application.
 
 ## Creating an ASGI app
 
-In our `asgi.py` file, we can wrap the default Django ASGI application function with our own ASGI application in order to handle the Websocket logic ourselves. To do this, we'll need to define an `async` function called `application`, that takes in the 3 ASGI parameters: `scope`, `receive`, and `send`. Rename the result of the `get_asgi_application` call to `django_application`, because we'll need it process HTTP requests. Inside of our `application` function we'll check the value of `scope['type']` to determine the request type. If the request type is `'http'`, then that means that the request is a normal HTTP request and we should let Django handle it. If the request type is `'websocket'`, then we'll want to handle the logic ourselves. The resulting `asgi.py` file should look something like this:
+In our `asgi.py` file, we're going to wrap Django's default ASGI application function with our own ASGI application in order to handle Websocket connections ourselves. To do this, we'll need to define an `async` function called `application`, that takes in the 3 ASGI parameters: `scope`, `receive`, and `send`. Rename the result of the `get_asgi_application` call to `django_application`, because we'll need it process HTTP requests. Inside of our `application` function we'll check the value of `scope['type']` to determine the request type. If the request type is `'http'`, then the request is a normal HTTP request and we should let Django handle it. If the request type is `'websocket'`, then we'll want to handle the logic ourselves. The resulting `asgi.py` file should look something like this:
 
 ```python
 import os
@@ -64,7 +64,7 @@ async def application(scope, receive, send):
         raise NotImplementedError(f"Unknown scope type {scope['type']}")
 ```
 
-Now we need to create a function to handle websocket connections. Create a file called `websocket.py` in the same folder as your `asgi.py` folder, and define an ASGI application function called `websocket_application` that takes in the 3 ASGI parameters. Next, we'll import `websocket_application` in our `asgi.py` file, and call it inside of our `application` function to handle Websocket requests, passing in the `scope`, `receive`, and `send` parameters. It should look something like this:
+Now we need to create a function to handle websocket connections. Create a file called `websocket.py` in the same folder as your `asgi.py` file, and define an ASGI application function called `websocket_application` that takes in the 3 ASGI parameters. Next, we'll import `websocket_application` in our `asgi.py` file, and call it inside of our `application` function to handle Websocket requests, passing in the `scope`, `receive`, and `send` parameters. It should look something like this:
 
 ```python
 # asgi.py
@@ -143,7 +143,7 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 ```
 
-To test the Websocket connection, open up the developer tools in a new tab in your browser. In the console, create a new `Websocket` instance called `ws` pointed to `ws://localhost:8000/`. Then attach an `onmessage` handler to `ws` that logs `event.data` to the console. Finally, call `ws.send('ping')` to send the message to the server. You should see the value `"pong!"` logged to the console.
+To test the Websocket connection, open up your browser's development tools in a new tab. In the console, create a new `Websocket` instance called `ws` pointed to `ws://localhost:8000/`. Then attach an `onmessage` handler to `ws` that logs `event.data` to the console. Finally, call `ws.send('ping')` to send the message to the server. You should see the value `"pong!"` logged to the console.
 
 ```javascript
 > ws = new WebSocket('ws://localhost:8000/')
@@ -155,6 +155,6 @@ To test the Websocket connection, open up the developer tools in a new tab in yo
   pong!
 ```
 
-Congrats! You now know how to add Websocket support to your Django application using ASGI with no extra dependencies. Now go build something awesome 😎
+Congrats! You now know how to add Websocket support to your Django application using ASGI. Now go build something awesome with it 😎
 
 *👋 Hi, I'm Jayden. I love building apps and teaching others how to build apps. For more posts about building apps with Django, React, and GraphQL, follow me on [Twitter](https://windle.dev/tw) or subscribe to the newsletter below.*
