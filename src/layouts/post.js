@@ -25,7 +25,7 @@ export const query = graphql`
 const Post = ({ data }) => (
   <Layout>
     <SEO
-      title={`${data.post.frontmatter.title} | Jayden Windle`}
+      title={`${data.post.frontmatter.title}`}
       keywords={[`Jayden Windle`, `software`, `software engineer`]}
       description={data.post.frontmatter.excerpt}
     />
