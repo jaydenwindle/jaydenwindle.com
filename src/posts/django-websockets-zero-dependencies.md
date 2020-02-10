@@ -65,7 +65,7 @@ async def application(scope, receive, send):
         raise NotImplementedError(f"Unknown scope type {scope['type']}")
 ```
 
-Now we need to create a function to handle websocket connections. Create a file called `websocket.py` in the same folder as your `asgi.py` file, and define an ASGI application function called `websocket_application` that takes in the 3 ASGI parameters. Next, we'll import `websocket_application` in our `asgi.py` file, and call it inside of our `application` function to handle Websocket requests, passing in the `scope`, `receive`, and `send` parameters. It should look something like this:
+Now we need to create a function to handle Websocket connections. Create a file called `websocket.py` in the same folder as your `asgi.py` file, and define an ASGI application function called `websocket_application` that takes in the 3 ASGI parameters. Next, we'll import `websocket_application` in our `asgi.py` file, and call it inside of our `application` function to handle Websocket requests, passing in the `scope`, `receive`, and `send` parameters. It should look something like this:
 
 ```python
 # asgi.py
@@ -91,9 +91,9 @@ async def websocket_application(scope, receive, send):
     pass
 ```
 
-Next, let's implement some logic for our websocket application. We're going to listen for all websocket connections, and when the client sends the string `"ping"`, we'll respond with the string `"pong!"`. 
+Next, let's implement some logic for our Websocket application. We're going to listen for all Websocket connections, and when the client sends the string `"ping"`, we'll respond with the string `"pong!"`. 
 
-Inside of the `websocket_application` funciton, we're going to define an indefinite loop that will handle Websocket requests until the connection is closed. Inside that loop, we'll wait for any new events that the server receives from the client. Then we'll act on the contents of the event, and send the response to the client.
+Inside of the `websocket_application` function, we're going to define an indefinite loop that will handle Websocket requests until the connection is closed. Inside that loop, we'll wait for any new events that the server receives from the client. Then we'll act on the contents of the event, and send the response to the client.
 
 To start, let's handle connections. When a new Websocket client connects to the server, we'll receive a `'websocket.connect'` event. In order to allow this connection, we'll send a `'websocket.accept'` event in response. This will complete the Websocket handshake and establish a persistent connection with the client.
 
