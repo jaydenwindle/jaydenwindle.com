@@ -6,6 +6,7 @@ color: "#212121"
 logo: ../images/supertab.png
 order: 3
 collection: projects
+published: true
 ---
 
 ![Screenshot](../images/supertab-screenshot.png)

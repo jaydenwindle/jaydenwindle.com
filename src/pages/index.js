@@ -20,7 +20,9 @@ export const query = graphql`
     }
     projects: allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___order] }
-      filter: { frontmatter: { collection: { eq: "projects" } } }
+      filter: {
+        frontmatter: { collection: { eq: "projects" }, published: { eq: true } }
+      }
       limit: 3
     ) {
       nodes {
@@ -41,7 +43,9 @@ export const query = graphql`
     }
     posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { collection: { eq: "posts" } } }
+      filter: {
+        frontmatter: { collection: { eq: "posts" }, published: { eq: true } }
+      }
     ) {
       nodes {
         id

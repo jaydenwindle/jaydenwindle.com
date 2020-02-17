@@ -10,7 +10,9 @@ export const query = graphql`
   query PostsQuery {
     posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { collection: { eq: "posts" } } }
+      filter: {
+        frontmatter: { collection: { eq: "posts" }, published: { eq: true } }
+      }
     ) {
       nodes {
         id

@@ -6,6 +6,7 @@ color: "#FA564B"
 logo: ../images/workfrom-logo-circle.png
 order: 2
 collection: projects
+published: true
 ---
 
 I absolutely love [Workfrom](https://workfrom.co/) and use it in every city that I visit. However, their native apps haven't been updated in over 3 years and are kind of a pain to use.
