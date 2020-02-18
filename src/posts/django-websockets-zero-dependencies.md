@@ -4,6 +4,7 @@ date: 2020-02-04
 excerpt: Now that Django 3.0 ships with ASGI support out of the box, adding Websockets to your Django app requires no extra dependencies.
 featuredImage: ../images/django-websockets-zero-dependencies.jpg
 collection: posts
+tags: ["Django", "Python"]
 published: true
 ---
 

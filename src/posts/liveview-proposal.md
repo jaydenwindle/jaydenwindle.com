@@ -4,6 +4,7 @@ date: 2020-02-13
 excerpt: Exploring an emerging backend development approach
 featuredImage: ../images/django-websockets-zero-dependencies.jpg
 collection: posts
+tags: ["LiveView", "Websockets"]
 published: false 
 ---
 

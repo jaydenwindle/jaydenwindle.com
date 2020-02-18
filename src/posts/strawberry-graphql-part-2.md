@@ -4,6 +4,7 @@ date: 2020-01-13
 excerpt: In part one of this series, we looked at how to use queries in Strawberry. In this post, we'll...
 featuredImage: ../images/strawberry-part-2-devto.jpg
 collection: posts
+tags: ["Strawberry", "GraphQL", "Python"]
 published: false
 ---
 

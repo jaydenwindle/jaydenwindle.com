@@ -4,6 +4,7 @@ date: 2019-09-22
 excerpt: Strawberry is a modern GraphQL server library for Python that's simple to understand and quick to ...
 featuredImage: ../images/strawberry-devto.jpg
 collection: posts
+tags: ["Strawberry", "GraphQL", "Python"]
 published: true
 ---
 

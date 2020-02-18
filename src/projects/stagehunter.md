@@ -6,6 +6,7 @@ color: "#FF9966"
 logo: ../images/stagehunter.png
 order: 4
 collection: projects
+tags: []
 published: true
 ---
 

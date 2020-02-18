@@ -6,6 +6,7 @@ color: "#313CFE"
 logo: ../images/jetpack.png
 order: 1
 collection: projects
+tags: []
 published: true
 ---
 

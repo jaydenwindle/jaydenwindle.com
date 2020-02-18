@@ -6,6 +6,7 @@ color: "#FA564B"
 logo: ../images/workfrom-logo-circle.png
 order: 2
 collection: projects
+tags: []
 published: true
 ---
 
