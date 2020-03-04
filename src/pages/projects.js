@@ -11,7 +11,9 @@ export const query = graphql`
   query ProjectsQuery {
     projects: allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___order] }
-      filter: { frontmatter: { collection: { eq: "projects" } } }
+      filter: {
+        frontmatter: { collection: { eq: "projects" }, published: { eq: true } }
+      }
     ) {
       nodes {
         id

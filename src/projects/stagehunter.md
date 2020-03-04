@@ -7,7 +7,7 @@ logo: ../images/stagehunter.png
 order: 4
 collection: projects
 tags: []
-published: true
+published: false
 ---
 
 ![Home Screen](../images/stagehunter-1.png)

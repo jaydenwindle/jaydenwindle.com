@@ -8,7 +8,7 @@ const ProjectHeader = ({ project }) => (
     className="py-32 rounded flex flex-col justify-center items-center mb-16"
   >
     <img
-      className="w-20 h-20 mx-auto mb-6"
+      className="w-20 h-20 mx-auto mb-6 object-contain"
       src={project.frontmatter.logo.publicURL}
       alt={`${project.frontmatter.title} logo`}
     />
