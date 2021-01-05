@@ -4,10 +4,10 @@ excerpt: A simple trivia app for web and mobile
 type: web / mobile app
 color: "#613DC1"
 logo: ../images/tentrivia-logo.png
-order: 3
+order: 5
 collection: projects
 tags: []
-published: false
+published: true
 ---
 
 TenTrivia is a simple trivia game I built to learn more about MobX and code-sharing between mobile and web in React Native apps.

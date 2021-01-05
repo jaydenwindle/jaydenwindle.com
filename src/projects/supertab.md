@@ -4,10 +4,10 @@ excerpt: Superhuman for browser tabs
 type: chrome extension
 color: "#212121"
 logo: ../images/supertab.png
-order: 2
+order: 4
 collection: projects
 tags: []
-published: false
+published: true
 ---
 
 Supertab is a keyboard-driven tab manager for Chrome that lets you easily manage lots of tabs with a few keystrokes. It's like Superhuman, but for tabs.
