@@ -4,7 +4,7 @@ excerpt: A simple trivia app for web and mobile
 type: web / mobile app
 color: "#613DC1"
 logo: ../images/tentrivia-logo.png
-order: 5
+order: 6
 collection: projects
 tags: []
 published: true

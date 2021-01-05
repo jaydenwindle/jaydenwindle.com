@@ -4,7 +4,7 @@ excerpt: Superhuman for browser tabs
 type: chrome extension
 color: "#212121"
 logo: ../images/supertab.png
-order: 4
+order: 5
 collection: projects
 tags: []
 published: true
