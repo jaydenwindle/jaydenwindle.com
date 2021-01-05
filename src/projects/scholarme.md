@@ -4,7 +4,7 @@ excerpt: Monthly financial aid drops for college students
 type: mobile app
 color: "#212121"
 logo: ../images/scholarmedrops.png
-order: 1
+order: 2
 collection: projects
 tags: []
 published: true
