@@ -29,7 +29,7 @@ function Layout({ children }) {
       <footer>
         <nav className="flex flex-col justify-between max-w-4xl mt-8 mx-auto p-4 md:p-8 text-sm sm:flex-row">
           <p className="mb-2">
-            &copy; {new Date().getFullYear()}. Made with ❤and ☕️
+            &copy; {new Date().getFullYear()}. Made with ❤ and ☕️
           </p>
           <p>
             <a
@@ -58,7 +58,7 @@ function Layout({ children }) {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

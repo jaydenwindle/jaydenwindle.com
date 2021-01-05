@@ -7,7 +7,7 @@ logo: ../images/workfrom-logo-circle.png
 order: 4
 collection: projects
 tags: []
-published: true
+published: false
 ---
 
 I absolutely love [Workfrom](https://workfrom.co/) and use it in every city that I visit. However, their native apps haven't been updated in over 3 years and are kind of a pain to use.

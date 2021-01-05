@@ -7,7 +7,7 @@ logo: ../images/supertab.png
 order: 2
 collection: projects
 tags: []
-published: true
+published: false
 ---
 
 Supertab is a keyboard-driven tab manager for Chrome that lets you easily manage lots of tabs with a few keystrokes. It's like Superhuman, but for tabs.
