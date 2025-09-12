@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Props = CollectionEntry<'projects'>['data'];
+const data = Astro.props as Props;
+import Link from './Link.astro';
+---
+
+<div class="flex flex-col md:flex-row justify-between">
+  <div class="flex flex-col md:flex-row">
+    <p class="font-mono text-neutral-100 block mr-3">
+      <Link href={data.url || ''} class={data.linkStyle ?? ''}>{data.title}</Link>
+    </p>
+    <p class="font-mono text-neutral-100 block">
+      ({data.description})
+    </p>
+  </div>
+  <p class="font-mono block mb-4 md:mb-1">
+    {data.tags.map((tag) => (
+      <span class="bg-neutral-700 text-neutral-900 px-1 mr-1">{tag}</span>
+    ))}
+  </p>
+</div>

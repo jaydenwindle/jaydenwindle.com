@@ -9,6 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.13.7"
+    "@astrojs/mdx": "^4.3.5",
+    "@astrojs/sitemap": "^3.5.1",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.13.7",
+    "tailwindcss": "^4.1.13"
+  },
+  "packageManager": "pnpm@9.15.6+sha512.139cab068fdf0b751268179ac5f909b5be72afb4a75c513d1905d151befc8977b593d3cf8671ed83d4d6637c5c94b98ffbce108125de4a5a27a31233601a99de",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16"
   }
 }

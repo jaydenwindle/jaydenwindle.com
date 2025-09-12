@@ -1,0 +1,13 @@
+---
+import Page from "@/layouts/Page.astro";
+
+type AnyProps = Record<string, any>;
+const props = Astro.props as AnyProps;
+const resolvedTitle: string = (props.title ?? props.frontmatter?.title ?? "").toString();
+---
+
+<Page title={resolvedTitle}>
+  <div class="prose dark:prose-invert font-mono">
+    <slot />
+  </div>
+</Page>

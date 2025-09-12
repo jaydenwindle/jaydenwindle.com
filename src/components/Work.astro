@@ -1,0 +1,14 @@
+---
+const data = Astro.props;
+import Link from './Link.astro';
+---
+
+<p class={`font-mono text-neutral-100 mb-4 md:mb-1 ${data.rowStyle}`}>
+  {data.startYear}-{data.endYear || "...."} - {data.role}
+  {data.company && (
+    <>
+      @ <Link href={`${data.companyURL}`} class={data.companyStyle}>{data.company}</Link>
+      ({data.companyDescription})
+    </>
+  )}
+</p>

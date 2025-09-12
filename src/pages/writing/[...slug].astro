@@ -1,0 +1,42 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from '@/layouts/Layout.astro';
+import FormattedDate from "@components/FormattedDate.astro";
+
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("writing"))
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<"writing">;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+  <div class="container max-w-3xl py-16 prose dark:prose-invert prose-code:before:content-none prose-code:after:content-none prose-inline-code:bg-[#002B36] prose-inline-code:text-[#839496] prose-inline-code:px-1 prose-pre:rounded-xs">
+    {
+      post.data.image && (
+        <Image class="mb-16 rounded-xs" src={post.data.image} alt="image" />
+      )
+    }
+
+    <h1 class="mb-4">
+      {post.data.title}
+    </h1>
+
+    <div class="text-sm mb-8 text-neutral-600">
+      <FormattedDate date={post.data.date} />
+    </div>
+
+    <Content />
+  </div>
+</Layout>

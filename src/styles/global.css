@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@plugin '@tailwindcss/typography';
+
+@font-face {
+  font-family: 'DepartureMono';
+  src: url('/fonts/DepartureMono-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-mono: DepartureMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+@custom-variant prose-inline-code {
+  &.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *)) {
+    @slot;
+  }
+}

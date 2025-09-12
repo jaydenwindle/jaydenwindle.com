@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Props = CollectionEntry<'contributions'>['data'];
+const data = Astro.props as Props;
+import Link from './Link.astro';
+---
+
+<div class="flex flex-col md:flex-row justify-between">
+  <div class="flex flex-col md:flex-row">
+    <p class="font-mono text-neutral-100 block mr-3">
+      <Link href={data.url || ''} class={data.linkStyle ?? ''}>{data.name}</Link>
+    </p>
+    <p class="font-mono text-neutral-100 block">
+      ({data.description})
+    </p>
+  </div>
+  <p class="font-mono mb-4 md:mb-1 block">
+    <span class="text-green-900">+{data.additions}</span>
+    {' '}
+    <span class="text-red-900">-{data.deletions}</span>
+    {' '}
+    <span class="bg-neutral-700 text-neutral-900 px-1">{data.prs} {data.prs === 1 ? 'PR' : 'PRs'}</span>
+  </p>
+</div>

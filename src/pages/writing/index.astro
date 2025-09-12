@@ -1,0 +1,27 @@
+---
+import Page from "@/layouts/Page.astro";
+import { getCollection } from "astro:content";
+import FormattedDate from "@/components/FormattedDate.astro";
+
+const posts = (await getCollection("writing"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Page title="writing">
+  <ul class="flex flex-col gap-4">
+    {posts.map((post) => (
+      <li>
+        <a href={`/writing/${post.slug}`} class="block group">
+          <h2 class="font-mono text-neutral-100 group-hover:underline">
+            {post.data.title}
+          </h2>
+          <p class="font-mono text-neutral-500 text-sm">
+            <FormattedDate date={post.data.date} />
+            {post.data.description ? ` — ${post.data.description}` : ""}
+          </p>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Page>

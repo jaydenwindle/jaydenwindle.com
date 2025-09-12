@@ -1,0 +1,75 @@
+---
+import "@/styles/global.css";
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-neutral-900">
+		<div class="container max-w-3xl px-3 py-3 mx-auto min-h-screen flex flex-col">
+			<header class="flex justify-between">
+				<a href="/" class="font-mono text-neutral-100 text-md">
+					<span class="text-neutral-500">&gt;</span>jw
+				</a>
+				<div class="relative group">
+					<button
+						class="font-mono text-neutral-500 text-md px-1 group-has-hover:bg-neutral-100 group-has-hover:text-neutral-900 focus:bg-neutral-100 focus:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
+						type="button"
+					>
+						/menu
+					</button>
+					<div
+						class="absolute right-0 z-50 border border-neutral-100 bg-neutral-900 shadow-lg opacity-0 invisible transition duration-150 group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible"
+					>
+						<ul>
+							<li>
+								<a href="/" class="block px-1 text-right font-mono text-neutral-200 hover:bg-neutral-100 hover:text-neutral-900">
+									/
+								</a>
+							</li>
+							<li>
+								<a href="/writing" class="block px-1 text-right font-mono text-neutral-200 hover:bg-neutral-100 hover:text-neutral-900">
+									/writing
+								</a>
+							</li>
+							<!-- <li> -->
+							<!-- 	<a href="/now" class="block px-1 text-right font-mono text-neutral-200 hover:bg-neutral-100 hover:text-neutral-900"> -->
+							<!-- 		/now -->
+							<!-- 	</a> -->
+							<!-- </li> -->
+							<!-- <li> -->
+							<!-- 	<a href="/gratitude" class="block px-1 text-right font-mono text-neutral-200 hover:bg-neutral-100 hover:text-neutral-900"> -->
+							<!-- 		/gratitude -->
+							<!-- 	</a> -->
+							<!-- </li> -->
+						</ul>
+					</div>
+				</div>
+			</header>
+
+			<main class="font-mono text-neutral-100 flex-1">
+				<slot />
+			</main>
+
+			<footer class="flex justify-between">
+				<p class="font-mono text-neutral-700 opacity-40">
+					c. {new Date().getFullYear()}
+				</p>
+
+				<p class="font-mono text-neutral-600 opacity-40">
+					made with &lt;3
+				</p>
+			</footer>
+		</div>
+
+	</body>
+</html>

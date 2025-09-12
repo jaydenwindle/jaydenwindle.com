@@ -1,16 +1,78 @@
 ---
+import { getCollection } from 'astro:content';
+import Work from "@/components/Work.astro"
+import Project from "@/components/Project.astro";
+import Contribution from "@/components/Contribution.astro";
+import Talk from "@/components/Talk.astro";
+import Layout from '@/layouts/Layout.astro';
 
+
+const work = (await getCollection('work')).sort(
+  (a, b) => a.data.order.valueOf() - b.data.order.valueOf(),
+);
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order.valueOf() - b.data.order.valueOf(),
+);
+
+const contributions = (await getCollection('contributions')).sort(
+  (a, b) => a.data.order.valueOf() - b.data.order.valueOf(),
+);
+
+const talks = (await getCollection('talks')).sort(
+  (a, b) => a.data.order.valueOf() - b.data.order.valueOf(),
+);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="hi, i'm jayden - i build software that maximizes human soverignty">
+
+  <section class="py-32 flex flex-col">
+    <h1 class="font-mono text-neutral-100 text-2xl mb-2">hi, i'm jayden</h1>
+    <h2 class="font-mono text-neutral-400 text-xl mb-4">i build software that <span class="bg-neutral-100 text-neutral-900 px-1">maximizes human soverignty</span></h2>
+    <p class="font-mono text-neutral-600 text-md">
+      ↳ say hi: 
+      <a target="_blank" href="https://windle.dev/gh" class="px-1 text-neutral-600 hover:bg-zinc-800 hover:text-neutral-100 hover:underline px-1">gh</a> / 
+      <a target="_blank" href="https://windle.dev/tw" class="px-1 text-neutral-600 hover:bg-black hover:text-neutral-100 hover:underline">tw</a> / 
+      <a target="_blank" href="https://farcaster.xyz/0xjw.eth" class="px-1 text-neutral-600 hover:bg-purple-500 hover:text-neutral-100 hover:underline">fc</a> / 
+      <a target="_blank" href="https://windle.dev/in" class="px-1 text-neutral-600 hover:bg-sky-700 hover:text-neutral-100 hover:underline">in</a>
+    </p>
+  </section>
+
+  <section class="flex flex-col mb-16 gap-1">
+    <h1 class="font-mono text-neutral-100 text-xl mb-4"><span class="text-neutral-600">#</span> projects</h1>
+    {projects.map(({ data }) => (
+      <Project {...data} />
+    ))}
+  </section>
+
+  <section class="flex flex-col mb-16">
+    <h1 class="font-mono text-neutral-100 text-xl mb-4"><span class="text-neutral-600">#</span> open source</h1>
+    {contributions.map(({ data }) => (
+      <Contribution {...data} />
+    ))}
+  </section>
+
+  <!--
+  <section class="flex flex-col mb-16">
+    <h1 class="font-mono text-neutral-100 text-xl mb-4"><span class="text-neutral-600">#</span> talks</h1>
+    {talks.map(({ data }) => (
+      <Talk {...data} />
+    ))}
+  </section>
+  -->
+
+  <!--
+  <section class="flex flex-col mb-16">
+    <h1 class="font-mono text-neutral-100 text-xl mb-4"><span class="text-neutral-600">#</span> hackathons</h1>
+    <p class="font-mono text-neutral-600 mb-1"> ↳ nothing to see here</p>
+  </section>
+  -->
+
+  <section class="flex flex-col mb-16">
+    <h1 class="font-mono text-neutral-100 text-xl mb-4"><span class="text-neutral-600">#</span> work</h1>
+    {work.map(({data}) => (
+      <Work {...data} />
+    ))}
+  </section>
+
+</Layout>

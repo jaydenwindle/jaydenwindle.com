@@ -1,0 +1,18 @@
+---
+// Reusable link component with shared styles
+// `icon` should be an import path (string) to an .svg file
+const { href = '', class: className = '', icon } = Astro.props as any;
+---
+
+<a
+  href={href}
+  target={href ? '_blank' : undefined}
+  class={`${className} hover:underline px-1`}
+>{icon && (
+  <img
+    src={icon}
+    alt=""
+    aria-hidden="true"
+    class="inline-block mr-1 h-[0.9em] w-[0.9em] align-[-0.125em] pointer-events-none select-none"
+  />
+)}<slot /></a>
