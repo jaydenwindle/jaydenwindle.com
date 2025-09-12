@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import Work from "@/components/Work.astro"
-import Project from "@/components/Project.astro";
 import Contribution from "@/components/Contribution.astro";
 import Talk from "@/components/Talk.astro";
+import Project from "@/components/Project.astro";
 import Layout from '@/layouts/Layout.astro';
 
 
@@ -34,7 +34,8 @@ const talks = (await getCollection('talks')).sort(
       <a target="_blank" href="https://windle.dev/gh" class="px-1 text-neutral-600 hover:bg-zinc-800 hover:text-neutral-100 hover:underline px-1">gh</a> / 
       <a target="_blank" href="https://windle.dev/tw" class="px-1 text-neutral-600 hover:bg-black hover:text-neutral-100 hover:underline">tw</a> / 
       <a target="_blank" href="https://farcaster.xyz/0xjw.eth" class="px-1 text-neutral-600 hover:bg-purple-500 hover:text-neutral-100 hover:underline">fc</a> / 
-      <a target="_blank" href="https://windle.dev/in" class="px-1 text-neutral-600 hover:bg-sky-700 hover:text-neutral-100 hover:underline">in</a>
+      <a target="_blank" href="https://windle.dev/in" class="px-1 text-neutral-600 hover:bg-sky-700 hover:text-neutral-100 hover:underline">in</a> /
+      <a target="_blank" href="mailto:hello@jaydenwindle.com" class="px-1 text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 hover:underline">em</a>
     </p>
   </section>
 
