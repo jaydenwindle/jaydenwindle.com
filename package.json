@@ -1,5 +1,5 @@
 {
-  "name": "personal-site-9-11-25",
+  "name": "jaydenwindle.com",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -20,10 +20,10 @@
     "sharp": "^0.34.3",
     "tailwindcss": "^4.1.13"
   },
-  "packageManager": "pnpm@9.15.6+sha512.139cab068fdf0b751268179ac5f909b5be72afb4a75c513d1905d151befc8977b593d3cf8671ed83d4d6637c5c94b98ffbce108125de4a5a27a31233601a99de",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9"
-  }
+  },
+  "packageManager": "pnpm@9.15.6+sha512.139cab068fdf0b751268179ac5f909b5be72afb4a75c513d1905d151befc8977b593d3cf8671ed83d4d6637c5c94b98ffbce108125de4a5a27a31233601a99de",
 }
