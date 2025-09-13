@@ -1,7 +1,7 @@
 ---
 startYear: 2019 
 endYear: 2020
-role: eng #3
+role: "eng #3"
 company: scholarme
 companyIcon: "@/assets/scholarme.svg"
 companyURL: https://www.ycombinator.com/companies/path
