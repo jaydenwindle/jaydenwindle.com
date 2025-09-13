@@ -45,7 +45,9 @@ const { Content } = await post.render();
       <FormattedDate date={post.data.date} />
     </div>
 
-    <Content />
+    <div class="pb-16">
+      <Content />
+    </div>
     
     <EmailSubscribe client:load />
   </div>
