@@ -25,11 +25,11 @@ const talks = (await getCollection('talks')).sort(
 );
 ---
 
-<Layout title="hi, i'm jayden - i build software that maximizes human soverignty" description="this is my website" type="profile">
+<Layout title="hi, i'm jayden - i build software that maximizes individual soverignty" description="this is my website" type="profile">
 
   <section class="py-32 flex flex-col">
     <h1 class="font-mono text-neutral-100 text-2xl mb-2">hi, i'm jayden</h1>
-    <h2 class="font-mono text-neutral-400 text-xl mb-4">i build software that <span class="bg-neutral-100 text-neutral-900 px-1">maximizes human soverignty</span></h2>
+    <h2 class="font-mono text-neutral-400 text-xl mb-4">i build software that <span class="bg-neutral-100 text-neutral-900 px-1">maximizes individual soverignty</span></h2>
     <p class="font-mono text-neutral-600 text-md">
       ↳ say hi: 
       <a target="_blank" href="https://windle.dev/gh" class="px-1 text-neutral-600 hover:bg-zinc-800 hover:text-neutral-100 hover:underline px-1">gh</a> / 
@@ -48,7 +48,7 @@ const talks = (await getCollection('talks')).sort(
   </section>
 
   <section class="flex flex-col mb-16">
-    <h1 class="font-mono text-neutral-100 text-xl mb-4"><span class="text-neutral-600">#</span> open source</h1>
+    <h1 class="font-mono text-neutral-100 text-xl mb-4"><span class="text-neutral-600">#</span> contributions</h1>
     {contributions.map(({ data }) => (
       <Contribution {...data} />
     ))}

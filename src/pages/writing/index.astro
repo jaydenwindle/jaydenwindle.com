@@ -8,7 +8,7 @@ const posts = (await getCollection("writing"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Page title="writing" description="thoughts on software engineering, crypto, and maximizing human sovereignty">
+<Page title="writing" description="thoughts on software engineering, crypto, and maximizing individual sovereignty">
   <ul class="flex flex-col gap-4">
     {posts.map((post) => (
       <li>
