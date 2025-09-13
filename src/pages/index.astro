@@ -4,6 +4,7 @@ import Work from "@/components/Work.astro"
 import Contribution from "@/components/Contribution.astro";
 import Talk from "@/components/Talk.astro";
 import Project from "@/components/Project.astro";
+import EmailSubscribe from "@/components/EmailSubscribe.tsx";
 import Layout from '@/layouts/Layout.astro';
 
 
@@ -24,7 +25,7 @@ const talks = (await getCollection('talks')).sort(
 );
 ---
 
-<Layout title="hi, i'm jayden - i build software that maximizes human soverignty">
+<Layout title="hi, i'm jayden - i build software that maximizes human soverignty" type="profile">
 
   <section class="py-32 flex flex-col">
     <h1 class="font-mono text-neutral-100 text-2xl mb-2">hi, i'm jayden</h1>
@@ -75,5 +76,7 @@ const talks = (await getCollection('talks')).sort(
       <Work {...data} />
     ))}
   </section>
+
+  <EmailSubscribe client:load />
 
 </Layout>

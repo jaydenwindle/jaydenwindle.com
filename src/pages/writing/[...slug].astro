@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from '@/layouts/Layout.astro';
 import FormattedDate from "@components/FormattedDate.astro";
+import EmailSubscribe from "@/components/EmailSubscribe.tsx";
 
 import { Image } from "astro:assets";
 
@@ -21,8 +22,15 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout title={post.data.title}>
-  <div class="container max-w-3xl py-16 prose dark:prose-invert prose-code:before:content-none prose-code:after:content-none prose-inline-code:bg-[#002B36] prose-inline-code:text-[#93A1A1] prose-inline-code:px-1 prose-pre:rounded-xs">
+<Layout 
+  title={post.data.title}
+  description={post.data.description}
+  type="article"
+  publishedTime={post.data.date.toISOString()}
+  modifiedTime={post.data.date.toISOString()}
+  image={post.data.image?.src}
+>
+  <div class="container max-w-3xl pt-16 prose dark:prose-invert prose-code:before:content-none prose-code:after:content-none prose-inline-code:bg-[#002B36] prose-inline-code:text-[#93A1A1] prose-inline-code:px-1 prose-pre:rounded-xs">
     {
       post.data.image && (
         <Image class="mb-16 rounded-xs" src={post.data.image} alt="image" />
@@ -38,5 +46,7 @@ const { Content } = await post.render();
     </div>
 
     <Content />
+    
+    <EmailSubscribe client:load />
   </div>
 </Layout>

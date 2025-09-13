@@ -3,12 +3,21 @@ import Layout from "@/layouts/Layout.astro";
 
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article' | 'profile';
+  canonicalURL?: URL | string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  tags?: string[];
 }
 
-const { title } = Astro.props as Props;
+const { title, ...seoProps } = Astro.props as Props;
 ---
 
-<Layout title={title}>
+<Layout title={title} {...seoProps}>
   <section class="py-16">
     <h1 class="font-mono text-neutral-100 text-xl mb-8">
       <span class="text-neutral-600">#</span> {title}
