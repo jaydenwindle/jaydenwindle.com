@@ -7,7 +7,7 @@ import Link from './Link.astro';
   {data.startYear}-{data.endYear || "...."} - {data.role}
   {data.company && (
     <>
-      @ <Link href={`${data.companyURL}`} class={data.companyStyle}>{data.company}</Link>
+      @ <Link href={`${data.companyURL}`} class={data.companyStyle} icon={data.companyIcon}>{data.company}</Link>
       ({data.companyDescription})
     </>
   )}

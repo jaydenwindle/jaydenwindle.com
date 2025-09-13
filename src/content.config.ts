@@ -14,11 +14,12 @@ const writing = defineCollection({
 
 const work = defineCollection({
   type: "content",
-  schema: z.object({
+  schema: ({ image }) => z.object({
     startYear: z.number(),
     endYear: z.number().optional(),
     role: z.string(),
     company: z.string().optional(),
+    companyIcon: image().optional(),
     companyURL: z.string().optional(),
     companyBackgroundColor: z.string().optional(),
     companyTextColor: z.string().optional(),
@@ -31,10 +32,11 @@ const work = defineCollection({
 
 const projects = defineCollection({
   type: "content",
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
     url: z.string().url().optional(),
+    icon: image().optional(),
     tags: z.array(z.string()),
     linkStyle: z.string().optional(),
     order: z.number(),

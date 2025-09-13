@@ -16,9 +16,9 @@ import Link from './Link.astro';
     </p>
   </div>
   <p class="font-mono mb-4 md:mb-1 block">
-    <span class="text-green-900">+{data.additions}</span>
+    <span class="text-green-900">+{data.additions.toLocaleString()}</span>
     {' '}
-    <span class="text-red-900">-{data.deletions}</span>
+    <span class="text-red-900">-{data.deletions.toLocaleString()}</span>
     {' '}
     <span class="bg-neutral-700 text-neutral-900 px-1">{data.prs} {data.prs === 1 ? 'PR' : 'PRs'}</span>
   </p>

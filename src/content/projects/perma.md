@@ -5,6 +5,7 @@ tags:
   - react native
   - solidity
 url: https://per.ma
+icon: "@/assets/perma.svg"
 linkStyle: bg-green-600 text-neutral-100
 order: 2
 ---
