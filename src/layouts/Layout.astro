@@ -35,14 +35,15 @@ const { title, ...seoProps } = Astro.props;
 					<span class="text-neutral-500">&gt;</span>jw
 				</a>
 				<div class="relative group">
-					<button
-						class="font-mono text-neutral-500 text-md px-1 group-has-hover:bg-neutral-100 group-has-hover:text-neutral-900 focus:bg-neutral-100 focus:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
-						type="button"
+					<input type="checkbox" id="menu-toggle" class="peer sr-only">
+					<label
+						for="menu-toggle"
+						class="cursor-pointer font-mono text-neutral-500 text-md px-1 hover:bg-neutral-100 hover:text-neutral-900 peer-checked:bg-neutral-100 peer-checked:text-neutral-900 group-hover:bg-neutral-100 group-hover:text-neutral-900"
 					>
 						/menu
-					</button>
+					</label>
 					<div
-						class="absolute right-0 z-50 border border-neutral-100 bg-neutral-900 shadow-lg opacity-0 invisible transition duration-150 group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible"
+						class="absolute right-0 z-50 border border-neutral-100 bg-neutral-900 shadow-lg invisible peer-checked:visible group-hover:visible"
 					>
 						<ul>
 							<li>
