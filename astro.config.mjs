@@ -22,6 +22,23 @@ export default defineConfig({
     },
   },
 
+  experimental: {
+    fonts: [{
+      name: "DepartureMono",
+      cssVariable: "--font-departure-mono",
+      provider: "local",
+      variants: [
+        {
+          src: [
+            "./src/assets/fonts/DepartureMono-Regular.otf",
+            "./src/assets/fonts/DepartureMono-Regular.woff",
+            "./src/assets/fonts/DepartureMono-Regular.woff2",
+          ]
+        },
+      ]
+    }]
+  },
+
   redirects: {
     "/writing/strawberry-graphql-part-1": "/writing/strawberry-graphql-queries",
   },

@@ -2,16 +2,8 @@
 
 @plugin '@tailwindcss/typography';
 
-@font-face {
-  font-family: 'DepartureMono';
-  src: url('/fonts/DepartureMono-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@theme {
-  --font-mono: DepartureMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+@theme inline {
+  --font-mono: var(--font-departure-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 @custom-variant prose-inline-code {
