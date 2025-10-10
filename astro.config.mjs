@@ -36,6 +36,20 @@ export default defineConfig({
           ]
         },
       ]
+    }, {
+      name: "IBM Plex Sans",
+      cssVariable: "--font-ibm-plex-sans",
+      provider: "local",
+      variants: [
+        {
+          weight: "400",
+          src: ["./node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2"]
+        },
+        {
+          weight: "600",
+          src: ["./node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-600-normal.woff2"]
+        },
+      ]
     }]
   },
 

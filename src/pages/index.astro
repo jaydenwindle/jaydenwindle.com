@@ -6,6 +6,11 @@ import Talk from "@/components/Talk.astro";
 import Project from "@/components/Project.astro";
 import EmailSubscribe from "@/components/EmailSubscribe.tsx";
 import Layout from '@/layouts/Layout.astro';
+import GithubIcon from '@/components/icons/GithubIcon.astro';
+import TwitterIcon from '@/components/icons/TwitterIcon.astro';
+import FarcasterIcon from '@/components/icons/FarcasterIcon.astro';
+import LinkedinIcon from '@/components/icons/LinkedinIcon.astro';
+import EmailIcon from '@/components/icons/EmailIcon.astro';
 
 
 const work = (await getCollection('work')).sort(
@@ -30,13 +35,18 @@ const talks = (await getCollection('talks')).sort(
   <section class="py-32 flex flex-col">
     <h1 class="font-mono text-neutral-100 text-2xl mb-2">hi, i'm jayden</h1>
     <h2 class="font-mono text-neutral-400 text-xl mb-4">i build software that <span class="bg-neutral-100 text-neutral-900 px-1">maximizes individual sovereignty</span></h2>
-    <p class="font-mono text-neutral-600 text-md">
-      ↳ say hi: 
-      <a target="_blank" href="https://windle.dev/gh" class="px-1 text-neutral-600 hover:bg-zinc-800 hover:text-neutral-100 hover:underline px-1">gh</a> / 
-      <a target="_blank" href="https://windle.dev/tw" class="px-1 text-neutral-600 hover:bg-black hover:text-neutral-100 hover:underline">tw</a> / 
-      <a target="_blank" href="https://windle.dev/fc" class="px-1 text-neutral-600 hover:bg-purple-500 hover:text-neutral-100 hover:underline">fc</a> / 
-      <a target="_blank" href="https://windle.dev/in" class="px-1 text-neutral-600 hover:bg-sky-700 hover:text-neutral-100 hover:underline">in</a> /
-      <a target="_blank" href="https://windle.dev/em" class="px-1 text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 hover:underline">@</a>
+    <p class="font-mono text-neutral-600 text-md flex items-center gap-2">
+      <span>↳ say hi:</span>
+      <a target="_blank" href="https://windle.dev/gh" class="group inline-flex items-center justify-center px-1 py-1 text-neutral-600 hover:bg-zinc-800 hover:text-neutral-100">
+        <GithubIcon class="h-[1rem] w-[1rem] pointer-events-none select-none" /></a>
+      <a target="_blank" href="https://windle.dev/tw" class="group inline-flex items-center justify-center px-1 py-1 text-neutral-600 hover:bg-black hover:text-neutral-100">
+        <TwitterIcon class="h-[1rem] w-[1rem] pointer-events-none select-none" /></a>
+      <a target="_blank" href="https://windle.dev/fc" class="group inline-flex items-center justify-center px-1 py-1 text-neutral-600 hover:bg-purple-500 hover:text-neutral-100">
+        <FarcasterIcon class="h-[1rem] w-[1rem] pointer-events-none select-none" /></a>
+      <a target="_blank" href="https://windle.dev/in" class="group inline-flex items-center justify-center px-1 py-1 text-neutral-600 hover:bg-sky-700 hover:text-neutral-100">
+        <LinkedinIcon class="h-[1rem] w-[1rem] pointer-events-none select-none" /></a>
+      <a target="_blank" href="https://windle.dev/em" class="group inline-flex items-center justify-center px-1 py-1 text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900">
+        <EmailIcon class="h-[1rem] w-[1rem] pointer-events-none select-none" /></a>
     </p>
   </section>
 

@@ -2,6 +2,7 @@
 import Page from "@/layouts/Page.astro";
 import { getCollection } from "astro:content";
 import FormattedDate from "@/components/FormattedDate.astro";
+import EmailSubscribe from "@/components/EmailSubscribe.tsx";
 
 const posts = (await getCollection("writing"))
   .filter((post) => !post.data.draft)
@@ -24,4 +25,8 @@ const posts = (await getCollection("writing"))
       </li>
     ))}
   </ul>
+
+  <div class="mt-16">
+    <EmailSubscribe client:load />
+  </div>
 </Page>
