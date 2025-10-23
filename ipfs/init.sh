@@ -17,7 +17,9 @@ ipfs config --json Gateway.PublicGateways '{
 
 # Set identity PrivKey from environment variable if provided
 if [ -n "$IPFS_IDENTITY_PRIVKEY" ]; then
-  ipfs config Identity.PrivKey "$IPFS_IDENTITY_PRIVKEY"
+  CONFIG_FILE="${IPFS_PATH:-/data/ipfs}/config"
+  jq --arg key "$IPFS_IDENTITY_PRIVKEY" '.Identity.PrivKey = $key' "$CONFIG_FILE" > "${CONFIG_FILE}.tmp"
+  mv "${CONFIG_FILE}.tmp" "$CONFIG_FILE"
 fi
 
 # Configure deployer auth for API endpoints if provided
