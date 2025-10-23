@@ -10,6 +10,7 @@ import relativeLinks from 'astro-relative-links';
 export default defineConfig({
   site: 'https://jaydenwindle.com',
   integrations: [mdx(), sitemap(), react(), relativeLinks()],
+  trailingSlash: 'always',
 
   vite: {
     plugins: [tailwindcss()],
