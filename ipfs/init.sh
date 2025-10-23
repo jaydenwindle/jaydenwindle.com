@@ -12,9 +12,6 @@ ipfs config --json Gateway.PublicGateways '{
   "jaydenwindle.com": {
     "NoDNSLink": false,
     "Paths": []
-  },
-  "*": {
-    "Paths": ["/ipfs", "/ipns"]
   }
 }'
 
@@ -30,6 +27,7 @@ if [ -n "$IPFS_API_AUTH_TOKEN" ]; then
       "AuthSecret": "bearer:'"$IPFS_API_AUTH_TOKEN"'",
       "AllowedPaths": [
         "/api/v0/name/publish",
+        "/api/v0/name/resolve",
         "/api/v0/dag/import"
       ]
     }
