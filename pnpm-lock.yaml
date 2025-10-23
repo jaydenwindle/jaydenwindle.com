@@ -32,6 +32,9 @@ importers:
       astro:
         specifier: ^5.15.1
         version: 5.15.1(@netlify/blobs@10.2.1)(@types/node@24.3.1)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.50.1)(typescript@5.9.2)(yaml@2.8.1)
+      astro-relative-links:
+        specifier: ^0.4.2
+        version: 0.4.2(astro@5.15.1(@netlify/blobs@10.2.1)(@types/node@24.3.1)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.50.1)(typescript@5.9.2)(yaml@2.8.1))
       react:
         specifier: ^19.1.1
         version: 19.1.1
@@ -1379,6 +1382,11 @@ packages:
   astring@1.9.0:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
+
+  astro-relative-links@0.4.2:
+    resolution: {integrity: sha512-YXwnmZz47yxiIIxWR10LwpGlqvGTERJ7JWX2lFRINTg/sFaPkqTx9xNM50W1+9FNMMxtTn7C8YNW5yDVX33Vzw==}
+    peerDependencies:
+      astro: '>=3.0.0'
 
   astro@5.15.1:
     resolution: {integrity: sha512-VM679M1qxOjGo6q3vKYDNDddkALGgMopG93IwbEXd3Buc2xVLuuPj4HNziNugSbPQx5S6UReMp5uzw10EJN81A==}
@@ -5441,6 +5449,11 @@ snapshots:
   ast-module-types@6.0.1: {}
 
   astring@1.9.0: {}
+
+  astro-relative-links@0.4.2(astro@5.15.1(@netlify/blobs@10.2.1)(@types/node@24.3.1)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.50.1)(typescript@5.9.2)(yaml@2.8.1)):
+    dependencies:
+      astro: 5.15.1(@netlify/blobs@10.2.1)(@types/node@24.3.1)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.50.1)(typescript@5.9.2)(yaml@2.8.1)
+      glob: 10.4.5
 
   astro@5.15.1(@netlify/blobs@10.2.1)(@types/node@24.3.1)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.50.1)(typescript@5.9.2)(yaml@2.8.1):
     dependencies:

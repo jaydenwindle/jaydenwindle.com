@@ -4,12 +4,12 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
+import relativeLinks from 'astro-relative-links';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jaydenwindle.com',
-  base: './',
-  integrations: [mdx(), sitemap(), react()],
+  integrations: [mdx(), sitemap(), react(), relativeLinks()],
 
   vite: {
     plugins: [tailwindcss()],
