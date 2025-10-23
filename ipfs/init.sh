@@ -1,5 +1,5 @@
 #!/bin/sh
-set -ex
+set -e
 
 # Disable fetching content for arbitrary CIDs
 ipfs config --json Gateway.NoFetch true
