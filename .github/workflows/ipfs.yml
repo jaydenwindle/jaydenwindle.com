@@ -41,6 +41,6 @@ jobs:
           kubo-api-auth	: ${{ secrets.KUBO_API_AUTH }}
           github-token: ${{ github.token }}
 
-      - name: Update IPNS
+      - name: Publish to IPNS
         run: |
           ipfs --api=${{ secrets.KUBO_API_URL }} --api-auth=${{ secrets.KUBO_API_AUTH }} name publish ${{ steps.deploy.outputs.cid }}

@@ -7,8 +7,16 @@ ipfs config --json Gateway.NoFetch true
 # Disable DNSLink resolution globally
 ipfs config --json Gateway.NoDNSLink true
 
-# Enable DNSLink for jaydenwindle.com
-ipfs config --json Gateway.PublicGateways '{"jaydenwindle.com": {"NoDNSLink": false, "Paths": []}}'
+# Enable DNSLink for jaydenwindle.com and allow IPFS/IPNS on all domains
+ipfs config --json Gateway.PublicGateways '{
+  "jaydenwindle.com": {
+    "NoDNSLink": false,
+    "Paths": []
+  },
+  "*": {
+    "Paths": ["/ipfs", "/ipns"]
+  }
+}'
 
 # Set identity PrivKey from environment variable if provided
 if [ -n "$IPFS_IDENTITY_PRIVKEY" ]; then
