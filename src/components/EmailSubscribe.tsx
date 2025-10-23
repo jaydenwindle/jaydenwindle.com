@@ -58,20 +58,14 @@ const EmailSubscribe: React.FC = () => {
       const formData = new FormData();
       formData.append('email', data.email);
 
-      const response = await fetch('/api/subscribe', {
+      const response = await fetch('https://buttondown.com/api/emails/embed-subscribe/jaydenwindle', {
         method: 'POST',
-        body: formData
+        body: formData,
+        mode: 'no-cors' // Buttondown doesn't send CORS headers for embed forms
       });
 
-      if (!response.ok) {
-        const result = await response.json();
-        setError('root.serverError', {
-          type: 'server',
-          message: result.error || 'something went wrong, please try again'
-        });
-        return;
-      }
-
+      // With no-cors mode, we can't read the response status
+      // If we get here without throwing, assume success
       reset();
       setTimeout(updateCursorPosition, CURSOR_UPDATE_DELAY);
     } catch {

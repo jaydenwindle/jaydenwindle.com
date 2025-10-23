@@ -5,8 +5,6 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 
-import netlify from "@astrojs/netlify";
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jaydenwindle.com',
@@ -56,6 +54,4 @@ export default defineConfig({
   redirects: {
     "/writing/strawberry-graphql-part-1": "/writing/strawberry-graphql-queries",
   },
-
-  adapter: netlify(),
 });
