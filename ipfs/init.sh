@@ -2,7 +2,7 @@
 set -e
 
 # Disable fetching content for arbitrary CIDs
-ipfs config --json Gateway.NoFetch true
+# ipfs config --json Gateway.NoFetch true
 
 # Disable DNSLink resolution globally
 ipfs config --json Gateway.NoDNSLink true
