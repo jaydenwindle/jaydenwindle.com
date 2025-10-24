@@ -43,4 +43,4 @@ jobs:
 
       - name: Publish to IPNS
         run: |
-          ipfs --api=${{ secrets.KUBO_API_URL }} --api-auth=${{ secrets.KUBO_API_AUTH }} name publish --key=self ${{ steps.deploy.outputs.cid }}
+          ipfs --api=${{ secrets.KUBO_API_URL }} --api-auth=${{ secrets.KUBO_API_AUTH }} name publish --key=ipns ${{ steps.deploy.outputs.cid }}
