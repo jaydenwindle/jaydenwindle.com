@@ -15,6 +15,11 @@ ipfs config --json Gateway.PublicGateways '{
   }
 }'
 
+# Import identity key if file exists
+if [ -f "/ipfs-identity-key.pem" ]; then
+  ipfs key import self /ipfs-identity-key.pem --force
+fi
+
 # Configure deployer auth for API endpoints if provided
 if [ -n "$IPFS_API_AUTH_TOKEN" ]; then
   ipfs config --json API.Authorizations '{
