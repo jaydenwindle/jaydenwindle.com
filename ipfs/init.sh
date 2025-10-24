@@ -17,7 +17,7 @@ ipfs config --json Gateway.PublicGateways '{
 
 # Import identity key if file exists
 if [ -f "/data/ipfs/ipfs-identity-key.pem" ]; then
-  ipfs key import self -f pem-pkcs8-cleartext /ipfs-identity-key.pem
+  ipfs key import self -f pem-pkcs8-cleartext /data/ipfs/ipfs-identity-key.pem
 fi
 
 # Configure deployer auth for API endpoints if provided
