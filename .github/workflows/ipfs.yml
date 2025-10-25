@@ -43,4 +43,6 @@ jobs:
 
       - name: Publish to IPNS
         run: |
-          ipfs --api=${{ secrets.KUBO_API_URL }} --api-auth=${{ secrets.KUBO_API_AUTH }} name publish --key=self ${{ steps.deploy.outputs.cid }}
+          OUTPUT=$(ipfs --api=${{ secrets.KUBO_API_URL }} --api-auth=${{ secrets.KUBO_API_AUTH }} name publish --key=self ${{ steps.deploy.outputs.cid }})
+          echo "$OUTPUT"
+          echo "✅ $OUTPUT" >> $GITHUB_STEP_SUMMARY
