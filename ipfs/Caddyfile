@@ -1,19 +1,25 @@
-:8080 {
-  reverse_proxy kubo:8080
-
-  log {
+(logging) {
+	log {
     output stdout
     format json
     level INFO
-  }
+	}
+}
+
+{$DOMAIN:localhost} {
+  reverse_proxy kubo:8080
+
+  import logging
+}
+
+:8080 {
+  reverse_proxy kubo:8080
+
+  import logging
 }
 
 :5001 {
   reverse_proxy kubo:5001
 
-  log {
-    output stdout
-    format json
-    level INFO
-  }
+  import logging
 }
