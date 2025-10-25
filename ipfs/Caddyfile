@@ -1,9 +1,9 @@
 (logging) {
-	log {
+  log {
     output stdout
     format json
     level INFO
-	}
+  }
 }
 
 {$DOMAIN:localhost} {
