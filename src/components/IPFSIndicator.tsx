@@ -6,18 +6,25 @@ const IPFSIndicator: React.FC = () => {
   const [isResolving, setIsResolving] = useState(false);
 
   useEffect(() => {
-    // Resolve IPNS name to CID
+    // Resolve IPNS name to CID by following the gateway redirect
     const resolveIPNS = async (ipnsName: string) => {
       setIsResolving(true);
       try {
-        // Try to resolve using a public IPFS gateway
-        const response = await fetch(`https://ipfs.io/api/v0/name/resolve?arg=${ipnsName}`);
-        const data = await response.json();
+        // Use the IPFS gateway to get the x-ipfs-roots header
+        const response = await fetch(`https://ipfs.io/ipns/${ipnsName}?format=raw`, {
+          method: 'HEAD',
+          redirect: 'manual'
+        });
 
-        if (data.Path) {
-          // Extract CID from the resolved path
-          const resolvedCid = data.Path.replace('/ipfs/', '').split('/')[0];
-          setCid(resolvedCid);
+        // Check the x-ipfs-roots header from the response
+        const ipfsRoots = response.headers.get('x-ipfs-roots');
+
+        if (ipfsRoots) {
+          // The header contains a comma-separated list of CIDs, take the first one
+          const resolvedCid = ipfsRoots.split(',').at(0)?.trim();
+          if (resolvedCid) {
+            setCid(resolvedCid);
+          }
         }
       } catch (error) {
         console.error('Error resolving IPNS name:', error);
