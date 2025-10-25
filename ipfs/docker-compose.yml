@@ -1,6 +1,9 @@
 services:
   kubo:
     build: .
+    ports:
+      - "4001:4001"
+      - "4001:4001/udp"
     volumes:
       - ./ipfs-data:/data/ipfs
     environment:
