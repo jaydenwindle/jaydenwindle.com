@@ -2,6 +2,7 @@
 import "@/styles/global.css";
 import { Font } from 'astro:assets';
 import SEO from "@/components/SEO.astro";
+import IPFSIndicator from "@/components/IPFSIndicator";
 
 export interface Props {
   title: string;
@@ -80,14 +81,16 @@ const { title, ...seoProps } = Astro.props;
 				<slot />
 			</main>
 
-			<footer class="flex justify-between pt-16">
-				<p class="font-mono text-neutral-700 opacity-40">
-					c. {new Date().getFullYear()}
-				</p>
+			<footer class="flex justify-between pt-16 text-sm">
+				<div class="flex flex-col gap-1">
+					<p class="font-mono text-neutral-700 opacity-40">
+						c. {new Date().getFullYear()}
+					</p>
+				</div>
 
-				<p class="font-mono text-neutral-600 opacity-40">
-					made with &lt;3
-				</p>
+				<div>
+					<IPFSIndicator client:load />
+				</div>
 			</footer>
 		</div>
 
