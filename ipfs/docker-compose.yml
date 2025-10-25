@@ -1,0 +1,22 @@
+services:
+  kubo:
+    build: .
+    volumes:
+      - ./ipfs-data:/data/ipfs
+    environment:
+      - IPFS_API_AUTH_TOKEN=${IPFS_API_AUTH_TOKEN:?IPFS_API_AUTH_TOKEN is required}
+      - DOMAIN=${DOMAIN:?DOMAIN is required}
+
+  caddy:
+    image: caddy:latest
+    ports:
+      - "80:80"
+      - "443:443"
+      - "5001:5001"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy-data:/data
+    environment:
+      - DOMAIN=${DOMAIN:?DOMAIN is required}
+    depends_on:
+      - kubo
