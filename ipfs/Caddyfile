@@ -1,5 +1,4 @@
-# Main domain - IPFS gateway only
-{$DOMAIN} {
+:8080 {
   reverse_proxy kubo:8080
 
   log {
@@ -9,9 +8,7 @@
   }
 }
 
-# IPFS RPC API on port 5001 with self-signed TLS
 :5001 {
-  tls internal
   reverse_proxy kubo:5001
 
   log {
