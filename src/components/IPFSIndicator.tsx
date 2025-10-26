@@ -41,13 +41,22 @@ const IPFSIndicator: React.FC = () => {
           method: 'HEAD',
         });
 
+        // Check for x-ipfs-roots header first (contains the CID directly)
+        const ipfsRootsHeader = response.headers.get('x-ipfs-roots');
+
         // Check for x-ipfs-path header (could be /ipfs/CID or /ipns/name)
         const ipfsPath = response.headers.get('x-ipfs-path');
 
         // Check for x-ipfs-hash header as fallback
         const ipfsHashHeader = response.headers.get('x-ipfs-hash');
 
-        if (ipfsPath) {
+        if (ipfsRootsHeader) {
+          // Use roots header - take the first CID
+          const rootCid = ipfsRootsHeader.split(',').at(0)?.trim();
+          if (rootCid) {
+            setCid(rootCid);
+          }
+        } else if (ipfsPath) {
           // Parse the IPFS path
           if (ipfsPath.startsWith('/ipfs/')) {
             // Direct CID
@@ -82,7 +91,7 @@ const IPFSIndicator: React.FC = () => {
 
   if (isResolving) {
     return (
-      <div className="font-mono text-neutral-600 opacity-40 text-center">
+      <div className="font-mono text-neutral-700 opacity-40 text-center">
         <span className="text-neutral-500">resolving ipns...</span>
       </div>
     );
@@ -92,7 +101,7 @@ const IPFSIndicator: React.FC = () => {
     const truncatedCid = `${cid.slice(0, 4)}...${cid.slice(-4)}`;
 
     return (
-      <div className="font-mono text-neutral-600 opacity-40 text-center w-full">
+      <div className="font-mono text-neutral-700 opacity-40 text-center w-full">
         <span>ipfs:</span>{' '}
         <a
           href={`https://ipfs.io/ipfs/${cid}`}
