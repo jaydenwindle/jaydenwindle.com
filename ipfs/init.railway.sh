@@ -31,5 +31,14 @@ echo "Pinning content..."
 ipfs pin add "$CID"
 echo "Content pinned successfully."
 
+# Import IPNS key (if configured)
+KEY_NAME="${IPNS_PUBLISH_KEY_NAME:-self}"
+if [ -n "$IPNS_PUBLISH_KEY" ] && [ -n "$IPNS_PUBLISH_KEY_NAME" ]; then
+  KEY_FILE="/tmp/ipns-key.pem"
+  echo "$IPNS_PUBLISH_KEY" > "$KEY_FILE"
+  ipfs key import "$IPNS_PUBLISH_KEY_NAME" -f pem-pkcs8-cleartext "$KEY_FILE"
+  rm "$KEY_FILE"
+fi
+
 # Publish to IPNS
-ipfs name publish /ipfs/$CID --allow-offline
+ipfs name publish --key="$KEY_NAME" /ipfs/$CID --allow-offline
