@@ -31,6 +31,8 @@ echo "Pinning content..."
 ipfs pin add "$CID"
 echo "Content pinned successfully."
 
-# Publish to IPNS using default identity key
-echo "Publishing to IPNS..."
+# Configure identity key if provided
+[ -n "$IPNS_KEY" ] && ipfs config Identity.PrivKey "$IPNS_KEY"
+
+# Publish to IPNS
 ipfs name publish /ipfs/$CID --allow-offline
