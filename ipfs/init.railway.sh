@@ -9,7 +9,7 @@ ipfs config --json Gateway.NoDNSLink true
 
 # Enable DNSLink for domain
 ipfs config --json Gateway.PublicGateways '{
-  "'"$DOMAIN"'": {
+  "'"$DNSLINK_DOMAIN"'": {
     "NoDNSLink": false,
     "Paths": []
   }
