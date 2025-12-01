@@ -16,7 +16,7 @@
     "@fontsource/ibm-plex-sans": "^5.2.8",
     "@fontsource/ibm-plex-serif": "^5.2.7",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.15.1",
+    "astro": "^5.15.9",
     "astro-relative-links": "^0.4.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
