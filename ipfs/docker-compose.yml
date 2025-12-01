@@ -1,0 +1,28 @@
+services:
+  kubo:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "4001:4001"
+      - "4001:4001/udp"
+    volumes:
+      - ./ipfs-data:/data/ipfs
+    environment:
+      - IPFS_API_AUTH_TOKEN=${IPFS_API_AUTH_TOKEN:?IPFS_API_AUTH_TOKEN is required}
+      - DOMAIN=${DOMAIN:?DOMAIN is required}
+
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "5001:5001"
+      - "8080:8080"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy-data:/data
+    environment:
+      - DOMAIN=${DOMAIN:?DOMAIN is required}
+    depends_on:
+      - kubo
