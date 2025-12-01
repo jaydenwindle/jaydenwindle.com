@@ -17,6 +17,11 @@ ipfs config --json Gateway.PublicGateways '{
   }
 }'
 
+# Announce public address for peers behind proxy/NAT
+SWARM_PORT="${SWARM_PORT:-4001}"
+SWARM_DOMAIN="${SWARM_DOMAIN:-$DOMAIN}"
+ipfs config --json Addresses.AppendAnnounce '["/dns4/'"$SWARM_DOMAIN"'/tcp/'"$SWARM_PORT"'"]'
+
 echo "IPFS configuration complete."
 
 # Add website to IPFS
