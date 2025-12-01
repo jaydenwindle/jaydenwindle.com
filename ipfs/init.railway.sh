@@ -21,7 +21,7 @@ echo "IPFS configuration complete."
 
 # Add website to IPFS
 echo "Adding website to IPFS..."
-CID=$(ipfs add -r -Q /data/ipfs/website)
+CID=$(ipfs add -r -Q /data/website)
 echo "Website added with CID: $CID"
 
 # Pin the content
