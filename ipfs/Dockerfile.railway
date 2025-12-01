@@ -3,8 +3,8 @@ FROM node:20-alpine AS builder
 
 WORKDIR /build
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@9.15.6 --activate
+# Enable corepack for pnpm
+RUN corepack enable
 
 # Copy package files for dependency installation
 COPY package.json pnpm-lock.yaml ./
@@ -22,7 +22,7 @@ RUN pnpm run build
 FROM ipfs/kubo:latest
 
 # Copy the built Astro site from builder stage
-COPY --from=builder /build/dist /data/website
+COPY --from=builder /build/dist /data/dist
 
 # Copy initialization script
 COPY ipfs/init.railway.sh /container-init.d/init.sh

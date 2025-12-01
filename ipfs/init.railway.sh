@@ -1,8 +1,6 @@
 #!/bin/sh
 set -e
 
-echo "Starting IPFS configuration..."
-
 # Disable fetching content for arbitrary CIDs
 ipfs config --json Gateway.NoFetch true
 
@@ -17,16 +15,15 @@ ipfs config --json Gateway.PublicGateways '{
   }
 }'
 
-# Announce public address for peers behind proxy/NAT
-SWARM_PORT="${SWARM_PORT:-4001}"
-SWARM_DOMAIN="${SWARM_DOMAIN:-$DOMAIN}"
-ipfs config --json Addresses.AppendAnnounce '["/dns4/'"$SWARM_DOMAIN"'/tcp/'"$SWARM_PORT"'"]'
-
-echo "IPFS configuration complete."
+# Announce public address (if configured)
+if [ -n "$SWARM_PORT" ] && [ -n "$SWARM_DOMAIN" ]; then
+  ipfs config --json Addresses.AppendAnnounce '["/dns4/'"$SWARM_DOMAIN"'/tcp/'"$SWARM_PORT"'"]'
+  echo "Announcing swarm address: /dns4/$SWARM_DOMAIN/tcp/$SWARM_PORT"
+fi
 
 # Add website to IPFS
 echo "Adding website to IPFS..."
-CID=$(ipfs add -r -Q /data/website)
+CID=$(ipfs add --recursive --quieter --cid-version=1 /data/dist)
 echo "Website added with CID: $CID"
 
 # Pin the content
