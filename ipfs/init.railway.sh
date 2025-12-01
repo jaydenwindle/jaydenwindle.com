@@ -31,13 +31,4 @@ echo "Content pinned successfully."
 
 # Publish to IPNS using default identity key
 echo "Publishing to IPNS..."
-IPNS_OUTPUT=$(ipfs name publish /ipfs/$CID --allow-offline)
-IPNS_NAME=$(echo "$IPNS_OUTPUT" | ipfs cid format -v 1 -b base36)
-
-echo ""
-echo "=========================================="
-echo "Deployment complete!"
-echo "=========================================="
-echo "CID: $CID"
-echo "IPNS: $IPNS_NAME"
-echo "=========================================="
+ipfs name publish /ipfs/$CID --allow-offline
