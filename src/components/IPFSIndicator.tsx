@@ -107,7 +107,7 @@ const IPFSIndicator: React.FC = () => {
           href={`https://ipfs.io/ipfs/${cid}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-neutral-400 hover:opacity-60"
+          className="hover:bg-neutral-100 hover:text-neutral-900"
         >
           {truncatedCid}
         </a>
