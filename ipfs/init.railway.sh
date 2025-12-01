@@ -35,8 +35,8 @@ echo "Content pinned successfully."
 KEY_NAME="${IPNS_PUBLISH_KEY_NAME:-self}"
 if [ -n "$IPNS_PUBLISH_KEY" ] && [ -n "$IPNS_PUBLISH_KEY_NAME" ]; then
   KEY_FILE="/tmp/ipns-key.pem"
-  echo "$IPNS_PUBLISH_KEY" > "$KEY_FILE"
-  ipfs key import "$IPNS_PUBLISH_KEY_NAME" -f pem-pkcs8-cleartext "$KEY_FILE"
+  echo "$IPNS_PUBLISH_KEY" >"$KEY_FILE"
+  ipfs key import "$IPNS_PUBLISH_KEY_NAME" -f pem-pkcs8-cleartext "$KEY_FILE" || :
   rm "$KEY_FILE"
 fi
 
