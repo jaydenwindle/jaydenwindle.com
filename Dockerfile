@@ -1,0 +1,29 @@
+# Stage 1: Build Astro site
+FROM node:20-alpine AS builder
+
+WORKDIR /build
+
+# Enable corepack for pnpm
+RUN corepack enable
+
+# Copy package files for dependency installation
+COPY package.json pnpm-lock.yaml ./
+
+# Install dependencies
+RUN pnpm install --frozen-lockfile
+
+# Copy the rest of the application
+COPY . .
+
+# Build the Astro site
+RUN pnpm run build
+
+# Stage 2: Kubo with built site
+FROM ipfs/kubo:latest
+
+# Copy the built Astro site from builder stage
+COPY --from=builder /build/dist /data/dist
+
+# Copy initialization script
+COPY ipfs-init.sh /container-init.d/init.sh
+RUN chmod +x /container-init.d/init.sh
