@@ -8,7 +8,7 @@ interface EmailFormData {
 const DOLLAR_SYMBOL_WIDTH = 20;
 const CURSOR_UPDATE_DELAY = 3000;
 
-const EmailSubscribe: React.FC = () => {
+export default function EmailSubscribe() {
   const {
     register,
     handleSubmit,
@@ -91,6 +91,15 @@ const EmailSubscribe: React.FC = () => {
     }
   }, [isSubmitting, isSubmitSuccessful, handleSubmit, onSubmit]);
 
+  const { ref: registerRef, ...emailRegistration } = register('email', {
+    required: 'please enter a valid email address',
+    pattern: {
+      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      message: 'that email is invalid, try again'
+    },
+    onChange: handleInputChange
+  });
+
   // Computed values
   const isDisabled = isSubmitting || isSubmitSuccessful;
   const hasError = !!(errors.email || errors.root?.serverError);
@@ -103,7 +112,7 @@ const EmailSubscribe: React.FC = () => {
     if (isSubmitting) {
       return (
         <span>
-          sending
+          subscribing
           <span className="loading-dots">
             <span>.</span>
             <span>.</span>
@@ -169,7 +178,7 @@ const EmailSubscribe: React.FC = () => {
 
       <section>
         <h1 className="font-mono text-neutral-100 text-xl mb-4">
-          <span className="text-neutral-600">#</span> subscribe
+          <span className="text-neutral-600">#</span> newsletter
         </h1>
 
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-1">
@@ -179,20 +188,12 @@ const EmailSubscribe: React.FC = () => {
               <span className="font-mono text-neutral-600 mr-2">$</span>
 
               <input
-                {...register('email', {
-                  required: 'please enter a valid email address',
-                  pattern: {
-                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: 'that email is invalid, try again'
-                  },
-                  onChange: handleInputChange
-                })}
+                {...emailRegistration}
                 type="email"
                 placeholder="your@email.com"
                 className="flex-1 font-mono bg-transparent border-none text-neutral-100 focus:outline-none placeholder-neutral-600 terminal-input"
                 ref={(e) => {
-                  const { ref } = register('email');
-                  ref(e);
+                  registerRef(e);
                   inputRef.current = e;
                 }}
                 onFocus={() => setIsFocused(true)}
@@ -231,5 +232,3 @@ const EmailSubscribe: React.FC = () => {
     </>
   );
 };
-
-export default EmailSubscribe;

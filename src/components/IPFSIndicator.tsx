@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const IPFSIndicator: React.FC = () => {
+export default function IPFSIndicator() {
   const [cid, setCid] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isResolving, setIsResolving] = useState(false);
@@ -114,6 +114,6 @@ const IPFSIndicator: React.FC = () => {
       </div>
     );
   }
-};
 
-export default IPFSIndicator;
+  return null;
+};

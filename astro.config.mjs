@@ -9,7 +9,7 @@ import relativeLinks from 'astro-relative-links';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jaydenwindle.com',
-  integrations: [mdx(), sitemap(), react(), relativeLinks()],
+  integrations: [react(), mdx(), sitemap(), relativeLinks()],
   trailingSlash: 'always',
 
   vite: {

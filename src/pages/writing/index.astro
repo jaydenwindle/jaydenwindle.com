@@ -13,7 +13,7 @@ const posts = (await getCollection("writing"))
   <ul class="flex flex-col gap-4">
     {posts.map((post) => (
       <li>
-        <a href={`/writing/${post.slug}`} class="block group">
+        <a href={`/writing/${post.slug}/`} class="block group">
           <h2 class="font-mono text-neutral-100 group-hover:underline">
             {post.data.title}
           </h2>
