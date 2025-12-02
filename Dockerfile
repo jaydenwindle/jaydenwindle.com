@@ -25,5 +25,5 @@ FROM ipfs/kubo:latest
 COPY --from=builder /build/dist /data/dist
 
 # Copy initialization script
-COPY ipfs/init.railway.sh /container-init.d/init.sh
+COPY ipfs-init.sh /container-init.d/init.sh
 RUN chmod +x /container-init.d/init.sh
