@@ -11,11 +11,11 @@ if [ -n "$DNSLINK_DOMAIN" ]; then
 
   # Enable DNSLink for domain
   ipfs config --json Gateway.PublicGateways '{
-    "'"$DNSLINK_DOMAIN"'": {
-      "NoDNSLink": false,
-      "Paths": [],
-    }
-  }'
+  "'"$DNSLINK_DOMAIN"'": {
+    "NoDNSLink": false,
+    "Paths": []
+  }
+}'
 fi
 
 # Announce public address (if configured)
