@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.8",
-    "@astrojs/netlify": "^6.6.0",
+    "@astrojs/netlify": "^7.0.13",
     "@astrojs/react": "^4.4.0",
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource/ibm-plex-sans": "^5.2.8",
