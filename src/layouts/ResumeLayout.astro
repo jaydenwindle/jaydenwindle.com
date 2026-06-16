@@ -1,0 +1,41 @@
+---
+import '@/styles/global.css';
+import { Font } from 'astro:assets';
+import SEO from '@/components/SEO.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article' | 'profile';
+  canonicalURL?: URL | string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  tags?: string[];
+}
+
+const { title, ...seoProps } = Astro.props;
+---
+
+<html lang="en" class="[background:var(--resume-bg)]">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#fafafa" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <SEO title={title} {...seoProps} />
+    <Font cssVariable="--font-departure-mono" preload />
+    <Font cssVariable="--font-ibm-plex-sans" preload />
+  </head>
+  <body class="[background:var(--resume-bg)] [color:var(--resume-text)]">
+    <main class="resume-shell container max-w-3xl px-3 py-3 mx-auto min-h-screen font-mono [color:var(--resume-text)] print:m-0 print:min-h-0 print:max-w-none print:p-0">
+      <slot />
+    </main>
+  </body>
+</html>

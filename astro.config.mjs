@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
@@ -22,11 +22,11 @@ export default defineConfig({
     },
   },
 
-  experimental: {
-    fonts: [{
-      name: "DepartureMono",
-      cssVariable: "--font-departure-mono",
-      provider: "local",
+  fonts: [{
+    name: "DepartureMono",
+    cssVariable: "--font-departure-mono",
+    provider: fontProviders.local(),
+    options: {
       variants: [
         {
           src: [
@@ -36,10 +36,12 @@ export default defineConfig({
           ]
         },
       ]
-    }, {
-      name: "IBM Plex Sans",
-      cssVariable: "--font-ibm-plex-sans",
-      provider: "local",
+    },
+  }, {
+    name: "IBM Plex Sans",
+    cssVariable: "--font-ibm-plex-sans",
+    provider: fontProviders.local(),
+    options: {
       variants: [
         {
           weight: "400",
@@ -50,8 +52,8 @@ export default defineConfig({
           src: ["./node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-600-normal.woff2"]
         },
       ]
-    }]
-  },
+    }
+  }],
 
   redirects: {
     "/writing/strawberry-graphql-part-1": "/writing/strawberry-graphql-queries",

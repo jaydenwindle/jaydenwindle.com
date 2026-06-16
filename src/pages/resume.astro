@@ -1,0 +1,298 @@
+---
+import { Image } from 'astro:assets';
+import ResumeLayout from '@/layouts/ResumeLayout.astro';
+import fpIcon from '@/assets/fp.svg';
+import jetpackIcon from '@/assets/jetpack-dark.svg';
+import magnetIcon from '@/assets/magnet.svg';
+import scholarmeIcon from '@/assets/scholarme.svg';
+import sugarIcon from '@/assets/sugar.svg';
+import synopsysIcon from '@/assets/synopsys.svg';
+
+const work = [
+  {
+    startYear: 2021,
+    role: 'Co-founder/CTO',
+    company: 'Future Primitive',
+    companyIcon: fpIcon,
+    companyURL: 'https://fp.inc',
+    companyDescription: 'crypto venture studio',
+    companyStyle: 'bg-orange-600',
+    details: [
+      'Built consumer crypto products and developer tooling across mobile, web, and smart contracts',
+      'Led product, engineering, architecture, hiring, and technical strategy',
+    ],
+  },
+  {
+    startYear: 2020,
+    endYear: 2021,
+    role: 'CTO',
+    company: 'Sugar',
+    companyIcon: sugarIcon,
+    companyURL: 'https://sugarliving.com',
+    companyDescription: 'property management saas',
+    companyStyle: 'bg-sky-500',
+    details: [
+      'Led engineering for enterprise property management SaaS product',
+      'Owned product execution across web, mobile, backend, integrations, and team process',
+    ],
+  },
+  {
+    startYear: 2019,
+    endYear: 2020,
+    role: 'Engineer #3',
+    company: 'ScholarMe (YC S20)',
+    companyIcon: scholarmeIcon,
+    companyURL: 'https://www.ycombinator.com/companies/path',
+    companyDescription: 'fintech for college students',
+    companyStyle: 'bg-emerald-600',
+    details: [
+      'Worked as early engineer on a fintech product for college students',
+      'Built and maintained product surfaces across frontend, backend, and internal systems',
+    ],
+  },
+  {
+    startYear: 2017,
+    endYear: 2019,
+    role: 'Co-founder/CTO',
+    company: 'Jetpack',
+    companyIcon: jetpackIcon,
+    companyURL: 'https://techcrunch.com/2017/03/04/stanford-student-launches-on-demand-startup-for-emergency-items-like-deodorant-and-hangover-cures/',
+    companyDescription: '15-min last mile delivery',
+    companyStyle: 'bg-emerald-300 text-neutral-600',
+    details: [
+      'Co-founded and built a 15-minute last mile delivery product from prototype to launch',
+      'Owned mobile apps, backend systems, operations tooling, and infrastructure',
+    ],
+  },
+  {
+    startYear: 2017,
+    endYear: 2017,
+    role: 'Intern',
+    company: 'Magnet',
+    companyIcon: magnetIcon,
+    companyURL: 'https://www.magnetforensics.com/',
+    companyDescription: 'digital forensics for govt agencies',
+    companyStyle: 'bg-blue-700',
+    details: [
+      'Worked on digital forensics software for government and law enforcement users',
+      'Implemented product features in C#/.NET and integrated external data sources',
+    ],
+  },
+  {
+    startYear: 2016,
+    endYear: 2016,
+    role: 'Intern',
+    company: 'Synopsys',
+    companyIcon: synopsysIcon,
+    companyURL: 'https://www.synopsys.com/',
+    companyDescription: 'embedded c drivers + cryptography',
+    companyStyle: 'bg-purple-900',
+    details: [
+      'Wrote low-level embedded C drivers for secure SoC',
+      'Built driver, test, and automation code across C, Python, and shell',
+    ],
+  },
+  {
+    startYear: 2013,
+    endYear: 2016,
+    role: 'Freelance Web Developer',
+    details: [
+      'Built websites and web applications for small businesses, agencies, and startups',
+      'Covered frontend, backend, WordPress, hosting, maintenance, and client delivery',
+    ],
+  },
+];
+
+const links = [
+  ['web', 'jaydenwindle.com', 'https://jaydenwindle.com'],
+  ['github', 'github.com/jaydenwindle', 'https://github.com/jaydenwindle'],
+  ['linkedin', 'linkedin.com/in/jayden-windle-79b0bb68', 'https://www.linkedin.com/in/jayden-windle-79b0bb68/'],
+  ['email', 'hello@jaydenwindle.com', 'mailto:hello@jaydenwindle.com'],
+];
+---
+
+<ResumeLayout
+  title="Jayden Windle - Resume"
+  description="Ultra-minimal resume for Jayden Windle."
+  type="profile"
+>
+  <article class="py-16 text-sm leading-relaxed [color:var(--resume-text)] [text-wrap:pretty] print:p-0 print:text-[8.5pt] print:leading-[1.25] print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
+    <header class="mb-12 print:mb-[0.3in] print:break-inside-avoid">
+      <h1 class="text-2xl [color:var(--resume-text)] print:mb-[0.04in] print:text-[18pt]">Jayden Windle</h1>
+    </header>
+
+    <section class="resume-contact mb-12 print:mb-[0.3in] print:break-inside-avoid">
+      <dl class="resume-links grid gap-1">
+        {links.map(([label, text, href]) => (
+          <div class="grid gap-2 md:grid-cols-[7rem_minmax(0,1fr)] md:gap-[1.25rem] print:grid-cols-[1.15in_minmax(0,1fr)] print:gap-[1.25rem]">
+            <dt class="[color:var(--resume-label)]">{label}</dt>
+            <dd>
+              <a href={href} class="px-1 [color:var(--resume-subtle)] hover:[background:var(--resume-hover-bg)] hover:[color:var(--resume-hover-text)]" aria-label={`${label}: ${text}`}>
+              {text}
+              </a>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="mb-12 print:mb-[0.3in] print:break-inside-avoid">
+      <h2 class="mb-5 text-xl [color:var(--resume-text)] print:mb-[0.1in] print:text-[13pt]"><span class="[color:var(--resume-label)]">#</span> Work</h2>
+      <div class="grid gap-8 print:gap-0">
+        {work.map((job) => (
+          <div class="grid gap-2 md:grid-cols-[7rem_minmax(0,1fr)] md:gap-6 print:grid-cols-[1.15in_minmax(0,1fr)] print:gap-[0.12in] print:mb-[0.16in] print:break-inside-avoid">
+            <p class="resume-job-line mb-3 whitespace-nowrap text-base leading-[1.4] [color:var(--resume-text)] [overflow-wrap:normal] [word-break:keep-all] print:mb-[0.04in] print:text-[10pt]">{job.startYear}<span class="whitespace-nowrap">-</span>{job.endYear || '....'}</p>
+            <div>
+              <p class="resume-job-line mb-3 text-base [color:var(--resume-text)] print:mb-[0.04in] print:text-[10pt]">
+                {job.role}
+                {job.company && (
+                  <>
+                    {' '}@ <a href={job.companyURL} class={`${job.companyStyle ?? ''} group hover:underline px-1`} aria-label={`${job.company}, ${job.companyDescription}`}>{job.companyIcon && (
+                      <Image
+                        src={job.companyIcon}
+                        alt=""
+                        aria-hidden="true"
+                        class="inline-block mr-1 h-[0.8em] w-[0.8em] align-[-0.0625em] pointer-events-none select-none"
+                      />
+                    )}{job.company}</a>
+                  </>
+                )}
+              </p>
+              <ul class="grid gap-1.5 pl-4 [color:var(--resume-copy)] print:gap-[0.04in]">
+                {job.details.map((detail) => (
+                  <li class="list-[square]">{detail}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12 print:mb-[0.3in] print:break-inside-avoid">
+      <h2 class="mb-5 text-xl [color:var(--resume-text)] print:mb-[0.1in] print:text-[13pt]"><span class="[color:var(--resume-label)]">#</span> Education</h2>
+      <div class="grid gap-2 md:grid-cols-[7rem_minmax(0,1fr)] md:gap-6 print:grid-cols-[1.15in_minmax(0,1fr)] print:gap-[0.12in] print:break-inside-avoid">
+        <p class="resume-job-line mb-3 whitespace-nowrap text-base leading-[1.4] [color:var(--resume-text)] [overflow-wrap:normal] [word-break:keep-all] print:mb-[0.04in] print:text-[10pt]">2015<span class="whitespace-nowrap">-</span>2017</p>
+        <div>
+          <p class="resume-job-line mb-3 text-base [color:var(--resume-text)] print:mb-[0.04in] print:text-[10pt]">Bachelor of Computer Science (Information Security)</p>
+          <p class="[color:var(--resume-copy)]">Carleton University</p>
+        </div>
+      </div>
+    </section>
+  </article>
+</ResumeLayout>
+
+<script is:inline>
+  (() => {
+    const printStyleId = 'resume-print-color-mode';
+
+    const setPrintColorMode = () => {
+      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const style = document.getElementById(printStyleId) || document.createElement('style');
+
+      style.id = printStyleId;
+      style.textContent = isDark
+        ? `@media print {
+            @page { margin: 0.75in 1in 0.5in 0.75in; background: #171717; }
+            html {
+              --resume-bg: #171717;
+              --resume-text: #f5f5f5;
+              --resume-subtle: #d4d4d4;
+              --resume-copy: #a3a3a3;
+              --resume-label: #525252;
+              --resume-hover-bg: #f5f5f5;
+              --resume-hover-text: #171717;
+              background: #171717 !important;
+              color-scheme: dark;
+            }
+            body {
+              background: #171717 !important;
+              color: #f5f5f5 !important;
+            }
+          }`
+        : `@media print {
+            @page { margin: 0.75in 1in 0.5in 0.75in; background: #fafafa; }
+            html {
+              --resume-bg: #fafafa;
+              --resume-text: #171717;
+              --resume-subtle: #404040;
+              --resume-copy: #525252;
+              --resume-label: #a3a3a3;
+              --resume-hover-bg: #171717;
+              --resume-hover-text: #fafafa;
+              background: #fafafa !important;
+              color-scheme: light;
+            }
+            body {
+              background: #fafafa !important;
+              color: #171717 !important;
+            }
+          }`;
+
+      if (!style.parentNode) {
+        document.head.appendChild(style);
+      }
+    };
+
+    window.addEventListener('beforeprint', () => {
+      setPrintColorMode();
+    });
+  })();
+</script>
+
+<style>
+  :global(html) {
+    --resume-bg: #fafafa;
+    --resume-text: #171717;
+    --resume-subtle: #404040;
+    --resume-copy: #525252;
+    --resume-label: #a3a3a3;
+    --resume-hover-bg: #171717;
+    --resume-hover-text: #fafafa;
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :global(html) {
+      --resume-bg: #171717;
+      --resume-text: #f5f5f5;
+      --resume-subtle: #d4d4d4;
+      --resume-copy: #a3a3a3;
+      --resume-label: #525252;
+      --resume-hover-bg: #f5f5f5;
+      --resume-hover-text: #171717;
+      color-scheme: dark;
+    }
+  }
+
+  .resume-job-line a {
+    color: #f5f5f5;
+  }
+
+  .resume-job-line a[class*="text-neutral-600"] {
+    color: #525252;
+  }
+
+  @media print {
+    @page {
+      size: letter;
+      margin: 0.75in 1in 0.5in 0.75in;
+      background: #fafafa;
+    }
+
+    :global(html),
+    :global(body) {
+      background: var(--resume-bg) !important;
+      color: var(--resume-text) !important;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    :global(.resume-shell),
+    :global(.resume-shell *) {
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+  }
+
+</style>
