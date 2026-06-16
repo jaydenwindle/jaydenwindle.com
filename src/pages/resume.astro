@@ -117,17 +117,17 @@ const links = [
   type="profile"
 >
   <article class="py-16 text-sm leading-relaxed [color:var(--resume-text)] [text-wrap:pretty] print:p-0 print:text-[8.5pt] print:leading-[1.25] print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
-    <header class="mb-12 print:mb-[0.3in] print:break-inside-avoid">
-      <h1 class="text-2xl [color:var(--resume-text)] print:mb-[0.04in] print:text-[18pt]">Jayden Windle</h1>
+    <header class="mb-12 print:mb-6 print:break-inside-avoid">
+      <h1 class="text-2xl [color:var(--resume-text)] print:mb-1 print:text-[18pt]">Jayden Windle</h1>
     </header>
 
-    <section class="resume-contact mb-12 print:mb-[0.3in] print:break-inside-avoid">
+    <section class="resume-contact mb-12 print:mb-6 print:break-inside-avoid">
       <dl class="resume-links grid gap-1">
         {links.map(([label, text, href]) => (
-          <div class="grid gap-2 md:grid-cols-[7rem_minmax(0,1fr)] md:gap-[1.25rem] print:grid-cols-[1.15in_minmax(0,1fr)] print:gap-[1.25rem]">
+          <div class="grid gap-2 md:grid-cols-[7rem_minmax(0,1fr)] md:gap-[1.25rem] print:grid-cols-[1.15in_minmax(0,1fr)] print:gap-[0.12in]">
             <dt class="[color:var(--resume-label)]">{label}</dt>
             <dd>
-              <a href={href} class="px-1 [color:var(--resume-subtle)] hover:[background:var(--resume-hover-bg)] hover:[color:var(--resume-hover-text)]" aria-label={`${label}: ${text}`}>
+              <a href={href} class="px-1 print:px-0 [color:var(--resume-subtle)] hover:[background:var(--resume-hover-bg)] hover:[color:var(--resume-hover-text)]" aria-label={`${label}: ${text}`}>
               {text}
               </a>
             </dd>
@@ -136,14 +136,14 @@ const links = [
       </dl>
     </section>
 
-    <section class="mb-12 print:mb-[0.3in] print:break-inside-avoid">
-      <h2 class="mb-5 text-xl [color:var(--resume-text)] print:mb-[0.1in] print:text-[13pt]"><span class="[color:var(--resume-label)]">#</span> Work</h2>
+    <section class="mb-12 print:mb-6 print:break-inside-avoid">
+      <h2 class="mb-5 text-xl [color:var(--resume-text)] print:mb-2 print:text-[13pt]"><span class="[color:var(--resume-label)]">#</span> Work</h2>
       <div class="grid gap-8 print:gap-0">
         {work.map((job) => (
-          <div class="grid gap-2 md:grid-cols-[7rem_minmax(0,1fr)] md:gap-6 print:grid-cols-[1.15in_minmax(0,1fr)] print:gap-[0.12in] print:mb-[0.16in] print:break-inside-avoid">
-            <p class="resume-job-line mb-3 whitespace-nowrap text-base leading-[1.4] [color:var(--resume-text)] [overflow-wrap:normal] [word-break:keep-all] print:mb-[0.04in] print:text-[10pt]">{job.startYear}<span class="whitespace-nowrap">-</span>{job.endYear || '....'}</p>
+          <div class="grid gap-2 md:grid-cols-[7rem_minmax(0,1fr)] md:gap-6 print:grid-cols-[1.15in_minmax(0,1fr)] print:gap-[0.12in] print:mb-4 print:break-inside-avoid">
+            <p class="resume-job-line mb-3 whitespace-nowrap text-base leading-[1.4] [color:var(--resume-text)] [overflow-wrap:normal] [word-break:keep-all] print:mb-1 print:text-[10pt]">{job.startYear}<span class="whitespace-nowrap">-</span>{job.endYear || '....'}</p>
             <div>
-              <p class="resume-job-line mb-3 text-base [color:var(--resume-text)] print:mb-[0.04in] print:text-[10pt]">
+              <p class="resume-job-line mb-3 text-base [color:var(--resume-text)] print:mb-1 print:text-[10pt]">
                 {job.role}
                 {job.company && (
                   <>
@@ -169,12 +169,12 @@ const links = [
       </div>
     </section>
 
-    <section class="mb-12 print:mb-[0.3in] print:break-inside-avoid">
-      <h2 class="mb-5 text-xl [color:var(--resume-text)] print:mb-[0.1in] print:text-[13pt]"><span class="[color:var(--resume-label)]">#</span> Education</h2>
+    <section class="mb-12 print:mb-6 print:break-inside-avoid">
+      <h2 class="mb-5 text-xl [color:var(--resume-text)] print:mb-2 print:text-[13pt]"><span class="[color:var(--resume-label)]">#</span> Education</h2>
       <div class="grid gap-2 md:grid-cols-[7rem_minmax(0,1fr)] md:gap-6 print:grid-cols-[1.15in_minmax(0,1fr)] print:gap-[0.12in] print:break-inside-avoid">
-        <p class="resume-job-line mb-3 whitespace-nowrap text-base leading-[1.4] [color:var(--resume-text)] [overflow-wrap:normal] [word-break:keep-all] print:mb-[0.04in] print:text-[10pt]">2015<span class="whitespace-nowrap">-</span>2017</p>
+        <p class="resume-job-line mb-3 whitespace-nowrap text-base leading-[1.4] [color:var(--resume-text)] [overflow-wrap:normal] [word-break:keep-all] print:mb-1 print:text-[10pt]">2015<span class="whitespace-nowrap">-</span>2017</p>
         <div>
-          <p class="resume-job-line mb-3 text-base [color:var(--resume-text)] print:mb-[0.04in] print:text-[10pt]">Bachelor of Computer Science (Information Security)</p>
+          <p class="resume-job-line mb-3 text-base [color:var(--resume-text)] print:mb-1 print:text-[10pt]">Bachelor of Computer Science (Information Security)</p>
           <p class="[color:var(--resume-copy)]">Carleton University</p>
         </div>
       </div>
@@ -193,7 +193,7 @@ const links = [
       style.id = printStyleId;
       style.textContent = isDark
         ? `@media print {
-            @page { margin: 0.75in 1in 0.5in 0.75in; background: #171717; }
+            @page { margin: 0.75in 1in 0.75in 0.75in; background: #171717; }
             html {
               --resume-bg: #171717;
               --resume-text: #f5f5f5;
@@ -211,7 +211,7 @@ const links = [
             }
           }`
         : `@media print {
-            @page { margin: 0.75in 1in 0.5in 0.75in; background: #fafafa; }
+            @page { margin: 0.75in 1in 0.75in 0.75in; background: #fafafa; }
             html {
               --resume-bg: #fafafa;
               --resume-text: #171717;
@@ -276,7 +276,7 @@ const links = [
   @media print {
     @page {
       size: letter;
-      margin: 0.75in 1in 0.5in 0.75in;
+      margin: 0.75in 1in 0.75in 0.75in;
       background: #fafafa;
     }
 
